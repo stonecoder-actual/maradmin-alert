@@ -27,6 +27,7 @@ def extract_information(url, title):
             table = PrettyTable()
             table.field_names = ["First Name", "Middle Initial", "Last Name", "Rank", "MCC Code"]
 
+            names_from_page = []
             for line in lines:
                 # Extract information from each line
                 parts = line.split()
@@ -56,12 +57,20 @@ def extract_information(url, title):
                     # Add a row to the table
                     table.add_row([first_name, middle_initial, last_name, rank, mcc_code])
 
+                    # Add the extracted names to the list
+                    names_from_page.append((first_name.lower(), last_name.lower()))
+                    
             # Print the table
             print(table)
+
+            # Return the extracted names
+            return names_from_page
         else:
             print(f"Error: <div class='body-text'> not found on the webpage: {url}")
+            return []
     else:
         print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")
+        return []
 
 def extract_information_1stlt(url, title):
     # Send a GET request to the webpage
@@ -86,6 +95,7 @@ def extract_information_1stlt(url, title):
             table = PrettyTable()
             table.field_names = ["Last Name", "Middle Initial", "First Name", "DOR", "MCC"]
 
+            names_from_page = []
             for line in lines:
                 # Extract information from each line
                 parts = line.split()
@@ -99,12 +109,21 @@ def extract_information_1stlt(url, title):
                     # Add a row to the table
                     table.add_row([last_name, middle_initial, first_name, dor, mcc])
 
+                    # Add the extracted names to the list
+                    names_from_page.append((first_name, last_name))
+
             # Print the table
             print(table)
+
+            # Return the extracted names
+            return names_from_page
         else:
             print(f"Error: <div class='body-text'> not found on the webpage: {url}")
+            return []
     else:
         print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")
+        return []
+
 
 def read_names_from_csv(csv_file):
     names = []
@@ -133,14 +152,12 @@ def monitor_rss_feed(rss_url, desired_titles, friends_names):
 
             # Use the appropriate extraction function based on the title
             if "1STLT" in entry.title.upper():
-                extract_information_1stlt(linked_webpage_url, entry.title)
+                names_from_page = extract_information_1stlt(linked_webpage_url, entry.title)
             else:
-                extract_information(linked_webpage_url, entry.title)
+                names_from_page = extract_information(linked_webpage_url, entry.title)
 
-            # Extract names and add to the set
-            names_from_rss = extract_names_from_rss(linked_webpage_url)  # Replace with the actual extraction logic
-            names = [(first.lower(), last.lower()) for first, last in names_from_rss]
-            rss_names_set.update(names)  # Update the set with extracted names
+            # Add the extracted names to the set
+            rss_names_set.update(names_from_page)
 
     # Set of friends' names
     friends_names_set = set((first.lower(), last.lower()) for first, last in friends_names)
