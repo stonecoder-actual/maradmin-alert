@@ -110,7 +110,7 @@ def extract_information_1stlt(url, title):
                     table.add_row([last_name, middle_initial, first_name, dor, mcc])
 
                     # Add the extracted names to the list
-                    names_from_page.append((first_name, last_name))
+                    names_from_page.append((first_name.lower(), last_name.lower(), "1STLT"))
 
             # Print the table
             print(table)
@@ -164,9 +164,8 @@ def monitor_rss_feed(rss_url, desired_titles, friends_names):
 
     # Find common names between the two sets
     common_names = rss_names_set.intersection(friends_names_set)
-
+    
     # Display the common names
-    print("\nCommon Names with Friends:")
     for first, last in common_names:
         print(f"Match found: {first.capitalize()} {last.capitalize()}")
 
