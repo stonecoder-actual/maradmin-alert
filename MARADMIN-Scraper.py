@@ -1,7 +1,7 @@
 import feedparser
 import requests
 from bs4 import BeautifulSoup
-from prettytable import PrettyTable
+#from prettytable import PrettyTable
 import csv
 
 def extract_information(url, title):
@@ -24,8 +24,8 @@ def extract_information(url, title):
             lines = text_content.split('\n')
 
             # Create a PrettyTable instance
-            table = PrettyTable()
-            table.field_names = ["First Name", "Middle Initial", "Last Name", "Rank", "MCC Code"]
+            #table = PrettyTable()
+            #table.field_names = ["First Name", "Middle Initial", "Last Name", "Rank", "MCC Code"]
 
             names_from_page = []
             for line in lines:
@@ -55,13 +55,13 @@ def extract_information(url, title):
                         last_name = names[-1]
 
                     # Add a row to the table
-                    table.add_row([first_name, middle_initial, last_name, rank, mcc_code])
+                    #table.add_row([first_name, middle_initial, last_name, rank, mcc_code])
 
                     # Add the extracted names to the list
                     names_from_page.append((first_name.lower(), last_name.lower()))
-                    
+                                
             # Print the table
-            print(table)
+            #print(table)
 
             # Return the extracted names
             return names_from_page
