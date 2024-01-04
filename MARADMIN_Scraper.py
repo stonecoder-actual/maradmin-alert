@@ -229,7 +229,7 @@ def Notify_of_Names(Name_Output):
         application.run_polling()   
 def main():
     # Replace 'your_rss_feed_url_here' with the actual URL of the RSS feed you want to monitor
-    rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=10&category=14336'
+    rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=50&category=14336'
     desired_titles = ["OFFICER PROMOTIONS FOR", "1STLT PROMOTIONS FOR"]
 
     # Replace 'path/to/your/contacts.csv' with the actual path to your CSV file
