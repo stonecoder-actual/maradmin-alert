@@ -24,8 +24,8 @@ def extract_information(url, title):
             lines = text_content.split('\n')
 
             # Create a PrettyTable instance
-            #table = PrettyTable()
-            #table.field_names = ["First Name", "Middle Initial", "Last Name", "Rank", "MCC Code"]
+            table = PrettyTable()
+            table.field_names = ["First Name", "Middle Initial", "Last Name", "Rank", "MCC Code"]
 
             names_from_page = []
             for line in lines:
@@ -55,13 +55,13 @@ def extract_information(url, title):
                         last_name = names[-1]
 
                     # Add a row to the table
-                    #table.add_row([first_name, middle_initial, last_name, rank, mcc_code])
+                    table.add_row([first_name, middle_initial, last_name, rank, mcc_code])
 
                     # Add the extracted names to the list
                     names_from_page.append((first_name.lower(), last_name.lower()))
                                 
             # Print the table
-            #print(table)
+            print(table)
 
             # Return the extracted names
             return names_from_page
@@ -100,9 +100,9 @@ def extract_information_1stlt(url, title):
                 # Extract information from each line
                 parts = line.split()
                 if len(parts) >= 5:
-                    last_name = parts[0]
+                    first_name = parts[0]
                     middle_initial = parts[1]
-                    first_name = parts[2]
+                    last_name = parts[2]
                     dor = parts[3]
                     mcc = parts[4]
 
@@ -112,8 +112,10 @@ def extract_information_1stlt(url, title):
                     # Add the extracted names to the list
                     names_from_page.append((first_name.lower(), last_name.lower()))
 
+            print(names_from_page)
             # Print the table
             print(table)
+            
 
             # Return the extracted names
             return names_from_page
