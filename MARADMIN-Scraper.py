@@ -72,60 +72,6 @@ def extract_information(url, title):
         print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")
         return []
 
-def extract_information_1stlt(url, title):
-    # Send a GET request to the webpage
-    response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Parse the HTML content of the webpage
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        # Find the <div> element with class "body-text"
-        body_text_div = soup.find('div', class_='body-text')
-
-        if body_text_div:
-            # Extract text content from the <div> element
-            text_content = body_text_div.get_text(separator='\n')
-
-            # Split the text content into lines
-            lines = text_content.split('\n')
-
-            # Create a PrettyTable instance
-            table = PrettyTable()
-            table.field_names = ["Last Name", "Middle Initial", "First Name", "DOR", "MCC"]
-
-            names_from_page = []
-            for line in lines:
-                # Extract information from each line
-                parts = line.split()
-                if len(parts) >= 5:
-                    first_name = parts[0]
-                    middle_initial = parts[1]
-                    last_name = parts[2]
-                    dor = parts[3]
-                    mcc = parts[4]
-
-                    # Add a row to the table
-                    table.add_row([last_name, middle_initial, first_name, dor, mcc])
-
-                    # Add the extracted names to the list
-                    names_from_page.append((first_name.lower(), last_name.lower()))
-
-            print(names_from_page)
-            # Print the table
-            print(table)
-            
-
-            # Return the extracted names
-            return names_from_page
-        else:
-            print(f"Error: <div class='body-text'> not found on the webpage: {url}")
-            return []
-    else:
-        print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")
-        return []
-
 
 def read_names_from_csv(csv_file):
     names = []
@@ -152,11 +98,7 @@ def monitor_rss_feed(rss_url, desired_titles, friends_names):
             linked_webpage_url = entry.link
             print(f"\nScraping webpage: {linked_webpage_url}")
 
-            # Use the appropriate extraction function based on the title
-            if "1STLT" in entry.title.upper():
-                names_from_page = extract_information_1stlt(linked_webpage_url, entry.title)
-            else:
-                names_from_page = extract_information(linked_webpage_url, entry.title)
+            names_from_page = extract_information(linked_webpage_url, entry.title)
 
             # Add the extracted names to the set
             rss_names_set.update(names_from_page)
