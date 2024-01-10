@@ -1,9 +1,23 @@
+''' IMPORT STANDARD LIBRARIES '''
 import feedparser
 import requests
-from bs4 import BeautifulSoup
-from prettytable import PrettyTable
 import csv
+import logging
 
+''' IMPORT 3RD PARTY LIBRARIES '''
+from prettytable import PrettyTable     # pip install prettytable
+from bs4 import BeautifulSoup
+''' DEFINE PSEUDO CONSTANTS '''
+
+# Pulls last 50 MARADMINS published
+rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=50&category=14336'
+
+# MARADMIN titles we want to scrape
+maradminTitles = ["OFFICER PROMOTIONS FOR", "1STLT PROMOTIONS FOR", "BOARD RESULTS"]
+
+csv_file_path = 'contacts.csv'
+
+''' LOCAL FUNCTIONS '''
 def extract_information(url, title):
     # Send a GET request to the webpage
     response = requests.get(url)
@@ -72,7 +86,6 @@ def extract_information(url, title):
         print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")
         return []
 
-
 def read_names_from_csv(csv_file):
     names = []
     with open(csv_file, 'r') as file:
@@ -83,7 +96,7 @@ def read_names_from_csv(csv_file):
             names.append((first_name.lower(), last_name.lower()))
     return names
 
-def monitor_rss_feed(rss_url, desired_titles, friends_names):
+def monitor_rss_feed(rss_url, maradminTitles, friends_names):
     # Parse the RSS feed
     feed = feedparser.parse(rss_url)
 
@@ -93,7 +106,7 @@ def monitor_rss_feed(rss_url, desired_titles, friends_names):
     # Iterate through entries in the feed
     for entry in feed.entries:
         # Check if the entry title contains any of the desired titles
-        if any(title in entry.title.upper() for title in desired_titles):
+        if any(title in entry.title.upper() for title in maradminTitles):
             # Extract information from the linked webpage
             linked_webpage_url = entry.link
             print(f"\nScraping webpage: {linked_webpage_url}")
@@ -105,11 +118,18 @@ def monitor_rss_feed(rss_url, desired_titles, friends_names):
 
     # Set of friends' names
     friends_names_set = set((first.lower(), last.lower()) for first, last in friends_names)
+    # Reverse the names for MARADMINs that list "last name, First name"
+    friends_names_set_reversed = set((first.lower(), last.lower()) for last, first in friends_names) 
 
     # Find common names between the two sets
     common_names = rss_names_set.intersection(friends_names_set)
     
     # Display the common names
+    for first, last in common_names:
+        print(f"Match found: {first.capitalize()} {last.capitalize()}")
+        
+    common_names = rss_names_set.intersection(friends_names_set_reversed)
+        
     for first, last in common_names:
         print(f"Match found: {first.capitalize()} {last.capitalize()}")
 
@@ -146,14 +166,22 @@ def extract_names_from_rss(url):
         else:
             print(f"Error: <div class='body-text'> not found on the webpage: {url}")
     else:
-        print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")
+        print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")   
 
-# Replace 'your_rss_feed_url_here' with the actual URL of the RSS feed you want to monitor
-rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=50&category=14336'
-desired_titles = ["OFFICER PROMOTIONS FOR", "1STLT PROMOTIONS FOR"]
+''' LOCAL CLASSES '''
+# NONE
 
-# Replace 'path/to/your/contacts.csv' with the actual path to your CSV file
-csv_file_path = 'contacts.csv'
-friends_names = read_names_from_csv(csv_file_path)
+''' MAIN ENTRY POINT '''
 
-monitor_rss_feed(rss_url, desired_titles, friends_names)
+if __name__ == "__main__":
+    ''' Main Script Entry Point '''
+    
+    try:
+        
+        friends_names = read_names_from_csv(csv_file_path)    
+        monitor_rss_feed(rss_url, maradminTitles, friends_names)        
+    
+        
+    except Exception as err:
+        logging.critical("\n\nScript Aborted     ", "Exception =     ", err)         
+    
