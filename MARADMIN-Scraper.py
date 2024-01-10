@@ -3,6 +3,7 @@ import feedparser
 import requests
 import csv
 import logging
+import re
 
 ''' IMPORT 3RD PARTY LIBRARIES '''
 from prettytable import PrettyTable     # pip install prettytable
@@ -49,6 +50,8 @@ def extract_information(url, title):
                     full_name = ' '.join(parts[:-2])
                     rank = parts[-2]
                     mcc_code = parts[-1]
+                    
+                    full_name = full_name.replace(',', '').strip()
 
                     # Split the full name into first name, middle initial, and last name
                     names = full_name.split()
@@ -61,7 +64,7 @@ def extract_information(url, title):
                         # Check if the middle initial is formatted correctly (one letter followed by a period)
                         if len(names[1]) == 2 and names[1][1] == '.':
                             middle_initial = names[1][0]
-                            last_name = names[-1]
+                            last_name = names[-1]                          
                         else:
                             last_name = names[1]
                     else:
