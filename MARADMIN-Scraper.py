@@ -154,4 +154,3 @@ if __name__ == "__main__":
         
     except Exception as err:
         logging.critical("\n\nScript Aborted     ", "Exception =     ", err)         
-    
