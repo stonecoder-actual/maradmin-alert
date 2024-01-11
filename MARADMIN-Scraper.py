@@ -8,8 +8,8 @@ import re
 ''' IMPORT 3RD PARTY LIBRARIES '''
 from prettytable import PrettyTable     # pip install prettytable
 from bs4 import BeautifulSoup
-''' DEFINE PSEUDO CONSTANTS '''
 
+''' DEFINE PSEUDO CONSTANTS '''
 # Pulls last 50 MARADMINS published
 rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=50&category=14336'
 
@@ -19,7 +19,6 @@ maradminTitles = ["OFFICER PROMOTIONS FOR", "1STLT PROMOTIONS FOR", "BOARD RESUL
 csv_file_path = 'contacts.csv'
 
 ''' LOCAL FUNCTIONS '''
-
 def read_names_from_csv(csv_file):
     names = []
     with open(csv_file, 'r') as file:
