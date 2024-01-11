@@ -106,6 +106,7 @@ def monitor_rss_feed(rss_url, maradminTitles, friends_names):
 
     # Set to store names from the RSS feed
     rss_names_set = set()
+    names_and_urls = {}
 
     # Iterate through entries in the feed
     for entry in feed.entries:
@@ -116,9 +117,12 @@ def monitor_rss_feed(rss_url, maradminTitles, friends_names):
             print(f"\nScraping webpage: {linked_webpage_url}")
 
             names_from_page = extract_information(linked_webpage_url, entry.title)
+            
+            rss_names_set.update((name, linked_webpage_url) for name in names_from_page)
 
             # Add the extracted names to the set
             rss_names_set.update(names_from_page)
+            
 
     # Set of friends' names
     friends_names_set = set((first.lower(), last.lower()) for first, last in friends_names)
@@ -127,15 +131,17 @@ def monitor_rss_feed(rss_url, maradminTitles, friends_names):
 
     # Find common names between the two sets
     common_names = rss_names_set.intersection(friends_names_set)
+    common_names_reversed = rss_names_set.intersection(friends_names_set_reversed)
     
     # Display the common names
-    for first, last in common_names:
-        print(f"Match found: {first.capitalize()} {last.capitalize()}")
+    for first, last, linked_webpage_url in common_names:
+        print(f"Match found: {first.capitalize()} {last.capitalize()} - URL: {url}")
         
     common_names = rss_names_set.intersection(friends_names_set_reversed)
         
-    for first, last in common_names:
-        print(f"Match found: {first.capitalize()} {last.capitalize()}")
+    for first, last, linked_webpage_url in common_names:
+        print(f"Match found: {first.capitalize()} {last.capitalize()} - URL: {url}")
+
 
 ''' LOCAL CLASSES '''
 # NONE
@@ -148,7 +154,7 @@ if __name__ == "__main__":
     try:
         
         friends_names = read_names_from_csv(csv_file_path)    
-        monitor_rss_feed(rss_url, maradminTitles, friends_names)        
+        monitor_rss_feed(rss_url, maradminTitles, friends_names)
     
         
     except Exception as err:
