@@ -207,7 +207,7 @@ def extract_names_from_rss(url):
     else:
         print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")
 
-def Notify_of_Names(Name_Output):
+
     import logging
     from telegram import Update
     from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
