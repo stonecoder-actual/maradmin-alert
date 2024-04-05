@@ -91,10 +91,6 @@ def extract_information_1stlt(url, title):
             # Split the text content into lines
             lines = text_content.split('\n')
 
-            # Create a PrettyTable instance
-            table = PrettyTable()
-            table.field_names = ["Last Name", "Middle Initial", "First Name", "DOR", "MCC"]
-
             names_from_page = []
             for line in lines:
                 # Extract information from each line
