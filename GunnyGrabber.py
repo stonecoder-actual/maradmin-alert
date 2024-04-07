@@ -21,26 +21,34 @@ response = requests.get(url)
 soup = BeautifulSoup(response.content, "html.parser")
 bodyText = (soup.find('div', class_='body-text'))
 
-if bodyText:
-        text_content = bodyText.get_text(separator='\r\n')
 
-        lines = text_content.split('\n')
+text_content = bodyText.get_text(separator='\r\n')
 
-        splitMaradmin = []
-        NamesInMaradmin = []
+lines = text_content.split('\n')
 
-        for line in lines:
-                splitMaradmin.append(line.split())
-        
-        for line in splitMaradmin:
-                if len(line) >= 4 and len(line) <= 10 and line[0].isalpha() and line[0].isupper() and len(line[0]) > 1 and line[0] != 'NAME':
-                        NamesInMaradmin.append(line)
+splitMaradmin = []
+MaradminLines = []
+MaradminNamePairs = []
+MaradminNames = []
+
+for line in lines:
+        splitMaradmin.append(line.split())
+
+for line in splitMaradmin:
+        if len(line) >= 4 and len(line) <= 10 and line[0].isalpha() and line[0].isupper() and len(line[0]) > 1 and line[0] != 'NAME':
+                MaradminLines.append(line)
+
+for line in MaradminLines:
+      for word in line:
+            if word.isalpha():
+                  MaradminNamePairs.append(word)
+                
+for pair in MaradminNamePairs:
+      print(pair)
+
+print(MaradminNamePairs)
 
 
 friendsNames = read_names_from_csv(csv_file)
 
-for name in splitMaradmin:
-      for subname in name:
-            if subname.lower() in friendsNames.lower():
-                  print(subname)
 
