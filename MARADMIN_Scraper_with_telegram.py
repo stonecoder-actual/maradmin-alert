@@ -198,3 +198,5 @@ def main():
 
     List_of_Matches = monitor_rss_feed(rss_url, desired_titles, friends_names)
     return List_of_Matches
+
+main()
