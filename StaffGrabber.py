@@ -15,7 +15,7 @@ def read_names_from_csv(csv_file):
 
 csv_file = 'C:\\github\\maradmin-alert\\contacts.csv'
 
-url = "https://www.marines.mil/News/Messages/Messages-Display/Article/3707403/fy24-approved-selections-to-gunnery-sergeant/"
+url = "https://www.marines.mil/News/Messages/Messages-Display/Article/3543538/fy23-approved-selections-to-staff-sergeant/"
 response = requests.get(url)
 
 soup = BeautifulSoup(response.content, "html.parser")

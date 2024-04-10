@@ -15,7 +15,7 @@ def read_names_from_csv(csv_file):
 
 csv_file = 'C:\\github\\maradmin-alert\\contacts.csv'
 
-url = "https://www.marines.mil/News/Messages/Messages-Display/Article/3707403/fy24-approved-selections-to-gunnery-sergeant/"
+url = "https://www.marines.mil/News/Messages/Messages-Display/Article/3714348/fy-2024-non-special-duty-assignment-meritorious-promotions/"
 response = requests.get(url)
 
 soup = BeautifulSoup(response.content, "html.parser")
@@ -34,13 +34,13 @@ for line in lines:
         splitMaradmin.append(line.split())
 
 for line in splitMaradmin:
-        if len(line) >= 4 and len(line) <= 10 and line[0].isalpha() and line[0].isupper() and len(line[0]) > 1 and line[0] != 'NAME':
+        if len(line) >= 6 and len(line) <= 10:
                 MaradminLines.append(line)
+                print(line)
 
 for line in MaradminLines:
       for word in line:
-            if word.isalpha() and len(word) > 2:
+            if word.isalpha() and len(word) > 1:
                   MaradminLastNames.append(word)
+                  print(line)
 
-
-print(MaradminLastNames)
