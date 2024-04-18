@@ -1,7 +1,8 @@
 import feedparser
 
-rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=400&category=14336'
-maradminTitles = ["APPROVED SELECTIONS TO STAFF SERGEANT", "OFFICER PROMOTIONS FOR", "1STLT PROMOTIONS FOR", "APPROVED SELECTIONS TO GUNNERY SERGEANT", "DUTY ASSIGNMENT MERITORIOUS PROMOTIONS"]
+rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=100&category=14336'
+maradminTitles = ["APPROVED SELECTIONS TO STAFF SERGEANT", "OFFICER PROMOTIONS FOR", "1STLT PROMOTIONS FOR", 
+                  "APPROVED SELECTIONS TO GUNNERY SERGEANT", "DUTY ASSIGNMENT MERITORIOUS PROMOTIONS"]
 
 
 # Parse the RSS feed

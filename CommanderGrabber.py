@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import pandas as pd
 import csv
 
 def read_names_from_csv(csv_file):
