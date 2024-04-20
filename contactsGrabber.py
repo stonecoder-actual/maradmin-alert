@@ -1,6 +1,6 @@
 
 
-csv_file = 'contacts.csv'
+csv_file = contacts.csv
 names = []
 with open(csv_file, 'r') as file:
     csv_reader = csv.DictReader(file)
