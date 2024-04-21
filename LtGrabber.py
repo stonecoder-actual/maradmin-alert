@@ -25,8 +25,8 @@ lines = text_content.split('\r\n')
 
 
 splitMaradmin = []
-MaradminLines = []
-MaradminLastNames = []
+maradminLines = []
+maradminNames = []
 
 for line in lines:
         splitMaradmin.append(line.split())
@@ -34,7 +34,12 @@ for line in lines:
 for line in splitMaradmin:
      if len(line) >= 4 and len(line) <= 6 and line[0].isalpha() and len(line[0])>1:
           line = line[:len(line)-2]
-          MaradminLines.append(line)
+          maradminLines.append(line)
 
-for name in MaradminLines:
-     print(name)
+for line in maradminLines:
+     if len(line) > 2:
+          maradminNames.append([line[2],line[0]])
+     else:
+          maradminNames.append(line)
+
+# Return [FULLLAST,FULLFIRST]
