@@ -12,7 +12,8 @@ from bs4 import BeautifulSoup
 # Pulls last 50 MARADMINS published
 rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=100&category=14336'
 
-
+# archive file of previous MARADMINS
+maradminArchive = "maradminArchive.txt"
 
 # MARADMIN titles we want to scrape
 titlesOfInterest = ["APPROVED SELECTIONS TO STAFF SERGEANT", "OFFICER PROMOTIONS FOR", "1STLT PROMOTIONS FOR", 
@@ -67,10 +68,15 @@ def commanderGrabber(url,friends):
         else:
              commanderPromotionNames.append([name[2].upper(),name[0].upper()])
     # [FULLLAST, FULLFIRST]
-    print(f"Fuckers are on the rise:\nCkeck out {url}")
+
+    message = []
+    message.append(f"Fuckers are on the rise:%0A{url}%0A")
     for name in commanderPromotionNames:
           if name in friends:
-                print(f"{name[1],name[0]} is getting promoted!")
+                message.append(f"{name[1],name[0]} is getting promoted!%0A")
+    
+    if len(message) > 1:
+        requests.get(f"https://api.telegram.org/bot6959601616:AAGSrxjkA5BorYMIlgFAWVhgtDc8fbCKfpM/sendMessage?chat_id=@maradmintesting&text={message}")
 
 def gunnyGrabber(url,friends):
     response = requests.get(url)
@@ -137,10 +143,15 @@ def gunnyGrabber(url,friends):
     for line in friends:
           modifiedFriends.append([line[0],line[1][0]])
 
-    print(f"Fuckers are on the rise:\nCkeck out {url}")
+
+    message = []
+    message.append(f"Fuckers are on the rise:%0A{url}%0A")
     for name in maradminNames:
           if name in modifiedFriends:
-                print(f"{name} is getting promoted!")
+                message.append(f"{name} is getting promoted!%0A")
+
+    if len(message) > 1:
+        requests.get(f"https://api.telegram.org/bot6959601616:AAGSrxjkA5BorYMIlgFAWVhgtDc8fbCKfpM/sendMessage?chat_id=@maradmintesting&text={message}")
 
 def ltGrabber(url,friends):
     response = requests.get(url)
@@ -172,10 +183,14 @@ def ltGrabber(url,friends):
         else:
             maradminNames.append([line[0].upper(),line[1].upper()])
     
-    print(f"Fuckers are on the rise:\nCheck out {url}")
+    message = []
+    message.append(f"Fuckers are on the rise: {url}")
     for name in maradminNames:
           if name in friends:
-                print(f"{name} is getting promoted!")
+                message.append(f"{name} is getting promoted!")
+
+    if len(message) > 1:
+        requests.get(f"https://api.telegram.org/bot6959601616:AAGSrxjkA5BorYMIlgFAWVhgtDc8fbCKfpM/sendMessage?chat_id=@maradmintesting&text={message}")
 
 ''' LOCAL CLASSES '''
 # NONE
@@ -192,17 +207,32 @@ if __name__ == "__main__":
         # Set to store names from the RSS feed
         rss_names_set = set()
         names_and_urls = {}
+        
+        previousArchives = []
+
+        with open(maradminArchive, 'r') as file:
+              previousArchives.append(file.readlines())
+        file.close()
+              
+        print(previousArchives)
 
         # Iterate through entries in the feed
         for entry in feed.entries:
             # Check if the entry title contains any of the desired titles
             if any(title in entry.title.upper() for title in titlesOfInterest):
-                  if 'GUNNERY SERGEANT' in entry.title:
-                        gunnyGrabber(entry.link,friends_names)
-                  elif 'OFFICER PROMOTIONS' in entry.title:
-                        commanderGrabber(entry.link,friends_names)
-                  elif '1STLT PROMOTIONS' in entry.title:
-                        ltGrabber(entry.link,friends_names)
+                  with open(maradminArchive, 'a') as file:
+                        file.writelines(entry.description)
+            file.close()
+                        
+                #   if 'GUNNERY SERGEANT' in entry.title:
+                #         gunnyGrabber(entry.link,friends_names)
+                #   elif 'OFFICER PROMOTIONS' in entry.title:
+                #         commanderGrabber(entry.link,friends_names)
+                #   elif '1STLT PROMOTIONS' in entry.title:
+                #         ltGrabber(entry.link,friends_names)
+                    
+                #     with open(maradminArchive, 'a') as file:
+                #         file.write(f"{entry.description}\n")
               
     except Exception as err:
         
