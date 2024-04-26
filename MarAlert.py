@@ -208,31 +208,26 @@ if __name__ == "__main__":
         rss_names_set = set()
         names_and_urls = {}
         
-        previousArchives = []
+        marchive = open(maradminArchive, "r")
+        marchiveLst = marchive.read().split("\n")
+        marchive.close()
+        
 
-        with open(maradminArchive, 'r') as file:
-              previousArchives.append(file.readlines())
-        file.close()
-              
-        print(previousArchives)
-
+        lst =[]
         # Iterate through entries in the feed
         for entry in feed.entries:
             # Check if the entry title contains any of the desired titles
-            if any(title in entry.title.upper() for title in titlesOfInterest):
+            if any(title in entry.title.upper() for title in titlesOfInterest) and entry.description not in marchiveLst:
+                  #lst.append(f"{entry.description}")
                   with open(maradminArchive, 'a') as file:
-                        file.writelines(entry.description)
-            file.close()
-                        
-                #   if 'GUNNERY SERGEANT' in entry.title:
-                #         gunnyGrabber(entry.link,friends_names)
-                #   elif 'OFFICER PROMOTIONS' in entry.title:
-                #         commanderGrabber(entry.link,friends_names)
-                #   elif '1STLT PROMOTIONS' in entry.title:
-                #         ltGrabber(entry.link,friends_names)
-                    
-                #     with open(maradminArchive, 'a') as file:
-                #         file.write(f"{entry.description}\n")
+                        file.write(f"{entry.description}\n")
+                  
+                  if 'GUNNERY SERGEANT' in entry.title:
+                        gunnyGrabber(entry.link,friends_names)
+                  elif 'OFFICER PROMOTIONS' in entry.title:
+                        commanderGrabber(entry.link,friends_names)
+                  elif '1STLT PROMOTIONS' in entry.title:
+                        ltGrabber(entry.link,friends_names)
               
     except Exception as err:
         
