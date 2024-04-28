@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 ''' DEFINE PSEUDO CONSTANTS '''
 # Pulls last 50 MARADMINS published
-rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=100&category=14336'
+rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=10&category=14336'
 
 # archive file of previous MARADMINS
 maradminArchive = "maradminArchive.txt"
@@ -191,6 +191,8 @@ def ltGrabber(url,friends):
 
     if len(message) > 1:
         requests.get(f"https://api.telegram.org/bot6959601616:AAGSrxjkA5BorYMIlgFAWVhgtDc8fbCKfpM/sendMessage?chat_id=@maradmintesting&text={message}")
+
+
 
 ''' LOCAL CLASSES '''
 # NONE
