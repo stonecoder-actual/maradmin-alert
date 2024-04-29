@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 rss_url = 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=10&category=14336'
 
 # archive file of previous MARADMINS
-maradminArchive = "maradminArchive.txt"
+maradminArchive = "maradmin-alert\\maradminArchive.txt"
 
 # MARADMIN titles we want to scrape
 titlesOfInterest = ["APPROVED SELECTIONS TO STAFF SERGEANT", "OFFICER PROMOTIONS FOR", "1STLT PROMOTIONS FOR", 
@@ -214,22 +214,22 @@ if __name__ == "__main__":
         marchiveLst = marchive.read().split("\n")
         marchive.close()
         
-
-        lst =[]
         # Iterate through entries in the feed
+        count = 0
         for entry in feed.entries:
             # Check if the entry title contains any of the desired titles
             if any(title in entry.title.upper() for title in titlesOfInterest) and entry.description not in marchiveLst:
-                  #lst.append(f"{entry.description}")
+                  count += 1
                   with open(maradminArchive, 'a') as file:
                         file.write(f"{entry.description}\n")
-                  
                   if 'GUNNERY SERGEANT' in entry.title:
                         gunnyGrabber(entry.link,friends_names)
                   elif 'OFFICER PROMOTIONS' in entry.title:
                         commanderGrabber(entry.link,friends_names)
                   elif '1STLT PROMOTIONS' in entry.title:
                         ltGrabber(entry.link,friends_names)
+        if count == 0:
+              requests.get("https://api.telegram.org/bot6959601616:AAGSrxjkA5BorYMIlgFAWVhgtDc8fbCKfpM/sendMessage?chat_id=@maradmintesting&text=test")
               
     except Exception as err:
         
