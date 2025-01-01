@@ -91,10 +91,6 @@ def extract_information_1stlt(url, title):
             # Split the text content into lines
             lines = text_content.split('\n')
 
-            # Create a PrettyTable instance
-            table = PrettyTable()
-            table.field_names = ["Last Name", "Middle Initial", "First Name", "DOR", "MCC"]
-
             names_from_page = []
             for line in lines:
                 # Extract information from each line
@@ -172,42 +168,6 @@ def monitor_rss_feed(rss_url, desired_titles, friends_names):
         Name_Output.append(name)
     return Name_Output
         
-# Function to extract names from the RSS feed webpage
-def extract_names_from_rss(url):
-    # Send a GET request to the webpage
-    response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Parse the HTML content of the webpage
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        # Find the <div> element with class "body-text"
-        body_text_div = soup.find('div', class_='body-text')
-
-        if body_text_div:
-            # Extract text content from the <div> element
-            text_content = body_text_div.get_text(separator='\n')
-
-            # Split the text content into lines
-            lines = text_content.split('\n')
-
-            # Create a list to store extracted names
-            names_list = []
-
-            for line in lines:
-                # Extract information from each line
-                parts = line.split()
-                if len(parts) >= 2:
-                    names_list.append(tuple(parts[:2]))
-
-            return names_list
-        else:
-            print(f"Error: <div class='body-text'> not found on the webpage: {url}")
-    else:
-        print(f"Error: Unable to fetch the webpage. Status code: {response.status_code}")
-
-def Notify_of_Names(Name_Output):
     import logging
     from telegram import Update
     from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
@@ -238,3 +198,5 @@ def main():
 
     List_of_Matches = monitor_rss_feed(rss_url, desired_titles, friends_names)
     return List_of_Matches
+
+main()

@@ -142,27 +142,6 @@ def monitor_rss_feed(rss_url, maradminTitles, friends_names):
     for first, last, linked_webpage_url in common_names:
         print(f"Match found: {first.capitalize()} {last.capitalize()} - URL: {url}")
         
-def telegram_notification(Name_Output):
-    import logging
-    from telegram import Update
-    from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
-
-    logging.basicConfig(
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        level=logging.INFO
-    )
-
-    async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-        await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
-
-    if __name__ == '__main__':
-        application = ApplicationBuilder().token('TOKEN').build()
-    
-        start_handler = CommandHandler('6388000969:AAF0sFp3lzch6ecDf8WJ7U0ThooJBKUvRnu', start)
-        application.add_handler(start_handler)
-    
-        application.run_polling()   
-
 
 ''' LOCAL CLASSES '''
 # NONE
@@ -176,6 +155,7 @@ if __name__ == "__main__":
         
         friends_names = read_names_from_csv(csv_file_path)    
         monitor_rss_feed(rss_url, maradminTitles, friends_names)
+        
     
         
     except Exception as err:
