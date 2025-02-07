@@ -1,5 +1,4 @@
 ''' IMPORT STANDARD LIBRARIES '''
-import feedparser
 import requests
 import csv
 import logging
@@ -7,7 +6,7 @@ import re
 
 
 ''' IMPORT 3RD PARTY LIBRARIES '''
-from bs4 import BeautifulSoup
+# NONE
 
 ''' DEFINE PSEUDO CONSTANTS '''
 #2025 URL for ALNAVS
@@ -59,20 +58,23 @@ def search_names_in_text(names, text):
 
 if __name__ == "__main__":
     """Main Script Execution"""
+    try:
     
-    friends_names = contactsGrabber(csv_file)
-    
-    for i in range(1000):
-        alnav_text = alnavPuller(str(i).zfill(3))
+        friends_names = contactsGrabber(csv_file)
+        
+        for i in range(1000):
+            alnav_text = alnavPuller(str(i).zfill(3))
 
-    #alnav_text = alnavPuller("013")
+        #alnav_text = alnavPuller("013")
 
-        if alnav_text:
-            matched_names = search_names_in_text(friends_names, alnav_text)
+            if alnav_text:
+                matched_names = search_names_in_text(friends_names, alnav_text)
 
-            if matched_names:
-                print("Found Matches:")
-                for name in matched_names:
-                    print(name)
-            else:
-                print("No matches found.")
+                if matched_names:
+                    print("Found Matches:")
+                    for name in matched_names:
+                        print(name)
+                else:
+                    print("No matches found.")
+    except Exception as err:
+        logging.critical("\n\nScript Aborted     ", "Exception =     ", err)
