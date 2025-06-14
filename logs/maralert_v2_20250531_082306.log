@@ -1,0 +1,8 @@
+2025-05-31 08:23:06,763 - INFO - Starting MARADMIN Alert System v2.0
+2025-05-31 08:23:06,763 - INFO - Successfully loaded 146 contacts
+2025-05-31 08:23:06,764 - INFO - ====== WebDriver manager ======
+2025-05-31 08:23:07,673 - INFO - Get LATEST chromedriver version for google-chrome
+2025-05-31 08:23:08,080 - INFO - Get LATEST chromedriver version for google-chrome
+2025-05-31 08:23:08,460 - INFO - Driver [C:\Users\samst\.wdm\drivers\chromedriver\win64\137.0.7151.55\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver] found in cache
+2025-05-31 08:23:08,462 - ERROR - Failed to setup Chrome driver: [WinError 193] %1 is not a valid Win32 application
+2025-05-31 08:23:08,462 - CRITICAL - Critical error in main execution: [WinError 193] %1 is not a valid Win32 application

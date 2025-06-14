@@ -1,0 +1,6 @@
+2025-05-31 08:19:15,032 - INFO - Starting MARADMIN Alert System v2.0
+2025-05-31 08:19:15,034 - INFO - Successfully loaded 146 contacts
+2025-05-31 08:19:15,034 - INFO - ====== WebDriver manager ======
+2025-05-31 08:19:16,491 - INFO - Get LATEST chromedriver version for google-chrome
+2025-05-31 08:19:16,491 - ERROR - Failed to setup Chrome driver: 'NoneType' object has no attribute 'split'
+2025-05-31 08:19:16,491 - CRITICAL - Critical error in main execution: 'NoneType' object has no attribute 'split'

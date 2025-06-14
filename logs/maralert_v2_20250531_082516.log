@@ -1,0 +1,185 @@
+2025-05-31 08:25:16,282 - INFO - Starting MARADMIN Alert System v2.0
+2025-05-31 08:25:16,282 - INFO - Successfully loaded 146 contacts
+2025-05-31 08:25:17,215 - INFO - patching driver executable C:\Users\samst\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2025-05-31 08:25:18,889 - INFO - Chrome driver initialized successfully
+2025-05-31 08:25:18,889 - INFO - Checking RSS feed for new MARADMINs
+2025-05-31 08:25:19,111 - INFO - Found 10 entries in RSS feed
+2025-05-31 08:25:19,111 - INFO - Found 2 new promotion MARADMINs to process
+2025-05-31 08:25:19,111 - INFO - Processing MARADMIN: FY 2025 APPROVED SELECTIONS TO STAFF SERGEANT
+2025-05-31 08:25:19,111 - INFO - Loading page: https://www.marines.mil/News/Messages/Messages-Display/Article/4201893/fy-2025-approved-selections-to-staff-sergeant/
+2025-05-31 08:25:19,863 - INFO - Successfully extracted 165752 characters from page
+2025-05-31 08:25:22,564 - INFO - Match found: HEALY, JACOB (confidence: 88%) matched with: HEALY          AH 6672/ 1774/1JZ   HEBERT         AL 0211/  540/1ML
+2025-05-31 08:25:23,195 - INFO - Match found: KELLY, NICHOLAS (confidence: 88%) matched with: KELLEY         KB 3529/  925/970   KELLING        LJ 0231/ 3730/1G0
+2025-05-31 08:25:23,358 - INFO - Match found: KING, LAURA (confidence: 86%) matched with: FREEMAN        ES 3529/ 1758/040   FREKING        CL 1164/  427/C67
+2025-05-31 08:25:23,905 - INFO - Match found: LEWIS, BRYANT (confidence: 88%) matched with: LEVIN          DA 0372/ 1890/1MU   LEWIS          CA 0441/ 3262/1EH
+2025-05-31 08:25:24,079 - INFO - Match found: MARTINEZ, CESAR (confidence: 91%) matched with: LARAGARCIA     SA 3152/  927/1EZ   LARAMARTINEZ   G  2862/ 1081/226
+2025-05-31 08:25:24,624 - INFO - Match found: MCDONALD, TATE (confidence: 91%) matched with: MACDONALD      MB 5769/ 2047/1XA   MACE           TG 0639/ 3830/1G8
+2025-05-31 08:25:25,519 - INFO - Match found: RUIZ, JUAN (confidence: 86%) matched with: BERMUDEZCRUZ   JD 0679/ 2258/040   BERNAL         AJ 0639/ 3137/1J3
+2025-05-31 08:25:26,034 - INFO - Match found: SANCHEZ, ANTONIO (confidence: 90%) matched with: SANCHEZ        AM 2651/ 4141/1F2   SANCHEZ        A  0369/  698/1DX
+2025-05-31 08:25:26,521 - INFO - Match found: SMITH, SAMUEL (confidence: 88%) matched with: HAYES          RJ 2629/ 3793/1LB   HAYESSMITH     DA 0679/ 3410/956
+2025-05-31 08:25:26,674 - INFO - Match found: STEPHENS, PHILIP (confidence: 91%) matched with: STEPHENS       JH 1345/ 1017/160   STERBYCI       K  6672/  853/1A5
+2025-05-31 08:25:26,994 - INFO - Match found: TANG, LINH (confidence: 86%) matched with: TSANG          SC 7051/ 3012/1CG   TSERING        T  6048/  997/V81
+2025-05-31 08:25:27,153 - INFO - Match found: THOMPSON JR, MICHAEL (confidence: 93%) matched with: THOMPSON       SI 6672/ 1221/036   THOMPSON JR    DD 0629/  937/978
+2025-05-31 08:25:27,850 - INFO - Match found: WARNER, ETHAN (confidence: 89%) matched with: WARNER         AN 3529/  622/934   WARRATAY       M  3047/  659/961
+2025-05-31 08:25:28,350 - INFO - Match found: WOODS, JENNINGS (confidence: 88%) matched with: WOODS          BH 3047/  378/041   WOODS          IE 0639/ 3164/1JA
+2025-05-31 08:25:28,657 - INFO - Match found: VAZQUEZ, XANIVAN (confidence: 90%) matched with: SOTO           V  4821/  518/15D   SOTOVAZQUEZ    N  3047/  759/1PJ
+2025-05-31 08:25:28,796 - INFO - Match found: MOORE, JOHNNY (confidence: 88%) matched with: MOORE          AE 0111/ 2053/996   MOORE          CA 0231/ 3875/VF2
+2025-05-31 08:25:28,997 - INFO - Match found: SMITH, JOSEPH (confidence: 88%) matched with: HAYES          RJ 2629/ 3793/1LB   HAYESSMITH     DA 0679/ 3410/956
+2025-05-31 08:25:29,144 - INFO - Match found: POWERS, STEPHEN (confidence: 89%) matched with: POWERS         KL 2629/ 3515/TJA   PRATHER        JN 6672/  181/J9G
+2025-05-31 08:25:29,298 - INFO - Match found: POWELL, SEAN (confidence: 89%) matched with: POWELL         CM 0811/  288/967   POWELL         RH 2161/  114/J78
+2025-05-31 08:25:29,846 - INFO - Match found: COSTELLO, JARED (confidence: 91%) matched with: ALBACOSTELLO   AR 6326/ 3810/VMB   ALCANTAR       AK 6048/ 2108/1JS
+2025-05-31 08:25:30,528 - INFO - Match found: ACEVEDO, ELMER (confidence: 90%) matched with: ABRIL          CO 3529/  191/KA3   ACEVEDO        AB 7041/ 2913/143
+2025-05-31 08:25:30,688 - INFO - Match found: RIVERA, DEREK (confidence: 89%) matched with: NUNEZOCAMPO    E  1341/  108/1EZ   NUNEZRIVERA    CJ 5821/  583/115
+2025-05-31 08:25:30,860 - INFO - Match found: MITCHELL, CONNOR (confidence: 91%) matched with: MITCHELL       AA 0451/ 1445/15G   MITCHELL       AT 7011/  301/968
+2025-05-31 08:25:31,356 - INFO - Match found: RUIZ, ANTHONY (confidence: 86%) matched with: RUIZ           DE 0679/ 4150/R4N   RUIZ           JT 3537/ 1503/960
+2025-05-31 08:25:31,719 - INFO - Match found: NGUYEN, THANHTAM (confidence: 89%) matched with: NGIRBEDUL JR   TI 0629/ 1194/130   NGUYEN         DH 5769/ 1214/995
+2025-05-31 08:25:31,896 - INFO - Match found: MAY, RAYMOND (confidence: 100%) matched with: 8.F.  ALTERNATES MAY RECEIVE PCA, PCS ORDERS BASED ON SERVICE 
+2025-05-31 08:25:32,074 - INFO - Match found: WAGNER, PARKER (confidence: 89%) matched with: WAGNER         JR 0629/ 1893/1RV   WAITE          AB 6531/ 1200/936
+2025-05-31 08:25:32,227 - INFO - Match found: DAVIS, CHARLES (confidence: 88%) matched with: DAVIS          CR 6694/ 3066/VFD   DAVIS          CM 6694/ 1390/1TC
+2025-05-31 08:25:32,748 - INFO - Match found: ALLEN, DARIAN (confidence: 88%) matched with: ALLEN          DT 0848/ 2909/A88   ALLEN          EH 2629/ 3571/175
+2025-05-31 08:25:33,089 - INFO - Match found: MARSHALL, MAXWELL (confidence: 91%) matched with: MARSHALL       LI 5939/ 3152/1QD   MARSHALL       MC 5948/ 4024/132
+2025-05-31 08:25:33,951 - INFO - Match found: MANN, DELON (confidence: 86%) matched with: BAUMANN        BP 2629/ 3379/040   BAUSCHKA       NA 0372/ 1085/1MU
+2025-05-31 08:25:34,111 - INFO - Match found: MORA, EDWARD (confidence: 86%) matched with: MOOSBERGER     K  0679/ 3448/TMG   MORA           BA 0231/   39/V12
+2025-05-31 08:25:34,939 - INFO - Match found: ADAMS, CHRIS (confidence: 88%) matched with: ADAMS          JR 0369/ 1003/V15   ADDIS          CA 0639/ 3711/928
+2025-05-31 08:25:35,071 - INFO - Match found: WITT, CORY (confidence: 86%) matched with: HEUER          MS 6288/ 2707/VFB   HEWITT         DR 0231/ 2112/077
+2025-05-31 08:25:35,227 - INFO - Match found: MEYER, STEVEN (confidence: 88%) matched with: BUGNI          TJ 0372/ 1663/1MX   BUHMEYER       BG 6113/  921/974
+2025-05-31 08:25:35,384 - INFO - Match found: MEYER, KNUTE (confidence: 88%) matched with: BUGNI          TJ 0372/ 1663/1MX   BUHMEYER       BG 6113/  921/974
+2025-05-31 08:25:35,892 - INFO - Match found: ANDERSON, JACKSON (confidence: 91%) matched with: ANDERS         CM 3529/ 1172/R3C   ANDERSON       A  2862/ 3834/1CM
+2025-05-31 08:25:36,393 - INFO - Match found: DONNELLY, JOE (confidence: 91%) matched with: DONNELLY       BD 2336/  945/1CQ   DONOFRIO       CJ 6531/  280/VLB
+2025-05-31 08:25:36,720 - INFO - Match found: PATTERSON, CONOR (confidence: 92%) matched with: PATTERSON      RC 0231/ 3778/V18   PATTON         TP 0369/  565/KA3
+2025-05-31 08:25:36,856 - INFO - Match found: CRUZ, ADAM (confidence: 86%) matched with: AMAYAAGUILERA  Y  0111/ 2235/038   AMAYACRUZ      ME 0871/ 2236/1MT
+2025-05-31 08:25:37,000 - INFO - Match found: LYNCH, ROBERT (confidence: 88%) matched with: KULSRUD        LC 6114/  225/MC8   KULYNYCH       BJ 5811/  711/225
+2025-05-31 08:25:37,137 - INFO - Match found: DIAZ, RUBEN (confidence: 86%) matched with: DIAMOND        DM 5811/ 2078/013   DIAZ           A  0411/ 1829/942
+2025-05-31 08:25:37,520 - INFO - Match found: DUNBAR, KEVIN (confidence: 88%) matched with: DUNBAR III     NJ 0811/  535/041   DUNCAN         AW 5954/ 2777/1L1
+2025-05-31 08:25:37,854 - INFO - Match found: CAMPBELL, DANIEL (confidence: 91%) matched with: CAMMON         TA 0811/ 1881/040   CAMPBELL       AL 5939/ 2904/070
+2025-05-31 08:25:38,022 - INFO - Match found: WILCOX, RAYMOND (confidence: 89%) matched with: WILCOX         AE 4591/ 3785/1DX   WILKERSON      AM 0211/ 1431/115
+2025-05-31 08:25:38,529 - INFO - Match found: HANSEN, MATTHEW (confidence: 89%) matched with: HANSEN         BL 0231/ 1998/TSR   HANSEN         JR 6258/ 1986/G91
+2025-05-31 08:25:40,073 - INFO - Match found: MATTHEWS, JEREMY (confidence: 91%) matched with: MATTA          JM 2629/ 2473/W52   MATTHEWS       GT 3529/  928/964
+2025-05-31 08:25:40,220 - INFO - Match found: CANTU, ZACKARIAH (confidence: 88%) matched with: CANO           MR 0111/ 2291/90A   CANTU          CR 0111/ 2074/040
+2025-05-31 08:25:40,373 - INFO - Match found: QUINTERO, JIM (confidence: 91%) matched with: YUNGAUZHO      BS 3152/  124/092   YUSTIQUINTERO  H  3381/ 2713/014
+2025-05-31 08:25:40,694 - INFO - Match found: VILLAGOMEZ, JAY (confidence: 92%) matched with: VILLAFANIA     TC 2862/ 3984/D10   VILLAGOMEZ     KA 3381/ 1581/90E
+2025-05-31 08:25:42,091 - INFO - Match found: KANE, KYLE (confidence: 86%) matched with: KAMUDA         AC 0811/  311/1NG   KANE           MP 0369/  593/116
+2025-05-31 08:25:42,954 - INFO - Match found: MEEHAN, MARTIN (confidence: 89%) matched with: MEEHAN         TJ 2111/ 1120/SU6   MEENAGH        KM 6323/  453/040
+2025-05-31 08:25:43,274 - INFO - Match found: SANCHEZ, REINALDO (confidence: 90%) matched with: SANCHEZ        AM 2651/ 4141/1F2   SANCHEZ        A  0369/  698/1DX
+2025-05-31 08:25:43,621 - INFO - Match found: ELLIS, AARON (confidence: 88%) matched with: ELLIOTTDROUIN  JK 4591/ 3052/091   ELLIS          AM 3047/ 1842/041
+2025-05-31 08:25:43,774 - INFO - Match found: WARD, MATTHEW (confidence: 86%) matched with: CALLOWAYEDWARD JM 0629/ 1369/952   CALVERT        CJ 0372/ 1861/KAT
+2025-05-31 08:25:43,914 - INFO - Match found: DAVIS, KYLE (confidence: 88%) matched with: DAVIS          CR 6694/ 3066/VFD   DAVIS          CM 6694/ 1390/1TC
+2025-05-31 08:25:44,064 - INFO - Match found: EVANS, ROBERT (confidence: 88%) matched with: EVANS          EC 0211/  504/114   EVANS          JG 0111/ 1094/121
+2025-05-31 08:25:44,387 - INFO - Match found: COAN, DAVID (confidence: 86%) matched with: COWAN          DJ 1721/ 3445/TRR   COXSON         MR 6541/ 1983/022
+2025-05-31 08:25:44,714 - INFO - Match found: GRIFFITH, DRAVEN (confidence: 91%) matched with: GRIFFITH       JP 0372/ 1179/1MX   GRIHIN         LA 0441/ 2799/VM1
+2025-05-31 08:25:45,013 - INFO - Match found: RICE, HUNTER (confidence: 86%) matched with: RICE           AD 0231/ 4038/111   RICHARD        LE 0111/ 2520/1M9
+2025-05-31 08:25:47,199 - INFO - Processing MARADMIN: OFFICER PROMOTIONS FOR JUNE 2025 AND PROJECTED OFFICER PROMOTIONS FOR JULY 2025
+2025-05-31 08:25:47,199 - INFO - Loading page: https://www.marines.mil/News/Messages/Messages-Display/Article/4195763/officer-promotions-for-june-2025-and-projected-officer-promotions-for-july-2025/
+2025-05-31 08:25:47,650 - INFO - Successfully extracted 21975 characters from page
+2025-05-31 08:25:48,256 - INFO - Match found: MARTINEZ, CESAR (confidence: 91%) matched with: LEONEL J. MARTINEZ              CAPT         VHA
+2025-05-31 08:25:48,347 - INFO - Match found: MCDONALD, TATE (confidence: 91%) matched with: JASON R. MCDONALD               MAJ          1FU
+2025-05-31 08:25:48,498 - INFO - Match found: RUIZ, JUAN (confidence: 86%) matched with: RAFAEL E. BENITEZRUIZ           LTCOL        1F1
+2025-05-31 08:25:48,695 - INFO - Match found: SMITH, SAMUEL (confidence: 88%) matched with: ALEXANDER R. SMITH              CAPT         15B
+2025-05-31 08:25:48,854 - INFO - Match found: UNGER, SHANNA (confidence: 86%) matched with: OFFICERS WILL RECEIVE CORRESPONDENCE UNDER SEPARATE COVER FROM CMC
+2025-05-31 08:25:49,119 - INFO - Match found: MOORE, JOHNNY (confidence: 88%) matched with: JASON A. MOORE                  MAJ          1JS
+2025-05-31 08:25:49,150 - INFO - Match found: SMITH, JOSEPH (confidence: 88%) matched with: ALEXANDER R. SMITH              CAPT         15B
+2025-05-31 08:25:49,236 - INFO - Match found: VINCENT, PATRICK (confidence: 90%) matched with: VINCENT M. GALVAN               MAJ          143
+2025-05-31 08:25:49,487 - INFO - Match found: MITCHELL, CONNOR (confidence: 91%) matched with: MITCHELL B. STUETELBERG         MAJ          V15
+2025-05-31 08:25:49,577 - INFO - Match found: RUIZ, ANTHONY (confidence: 86%) matched with: RAFAEL E. BENITEZRUIZ           LTCOL        1F1
+2025-05-31 08:25:49,809 - INFO - Match found: ALLEN, DARIAN (confidence: 88%) matched with: THOMAS J. ALLEN                 CAPT         VM1
+2025-05-31 08:25:50,027 - INFO - Match found: MANN, DELON (confidence: 86%) matched with: SEAN M. FUHRMANN                LTCOL        1JM
+2025-05-31 08:25:50,141 - INFO - Match found: GREGORY, RAY (confidence: 90%) matched with: GREGORY A. HALLORAN             CAPT         1J1
+2025-05-31 08:25:50,198 - INFO - Match found: ADAMS, CHRIS (confidence: 86%) matched with: ADAM C. KROEGER                 MAJ          QAW
+2025-05-31 08:25:50,373 - INFO - Match found: ANDERSON, JACKSON (confidence: 91%) matched with: SHAWN E. ANDERSON               COL          IRR
+2025-05-31 08:25:50,569 - INFO - Match found: PATTERSON, CONOR (confidence: 92%) matched with: AUSTIN T. PATTERSON             CAPT         022
+2025-05-31 08:25:50,620 - INFO - Match found: LYNCH, ROBERT (confidence: 88%) matched with: AMY E. LYNCH                    CAPT         130
+2025-05-31 08:25:50,643 - INFO - Match found: DIAZ, RUBEN (confidence: 86%) matched with: CRISTIAN E. ALMAZANDIAZ         MAJ          1C1
+2025-05-31 08:25:50,767 - INFO - Match found: CAMPBELL, DANIEL (confidence: 91%) matched with: SUSAN M. CAMPBELL               MAJ          143
+2025-05-31 08:25:51,143 - INFO - Match found: MATTHEWS, JEREMY (confidence: 91%) matched with: MATTHEW S. DUNN                 CAPT         15J
+2025-05-31 08:25:51,798 - INFO - Match found: WARD, MATTHEW (confidence: 86%) matched with: EDWARD C. LIPOSITZ III          LTCOL        U02
+2025-05-31 08:25:51,991 - INFO - Match found: ODOM, JUSTIN (confidence: 86%) matched with: CHRISTOPHER S. ODOM             LTCOL        1V1
+2025-05-31 08:25:52,019 - INFO - Match found: RICE, HUNTER (confidence: 86%) matched with: BRICE T. BAIRD                  CAPT         1NR
+2025-05-31 08:25:54,051 - INFO - Processed MARADMINs saved successfully
+2025-05-31 08:25:54,051 - INFO - Processing complete:
+2025-05-31 08:25:54,051 - INFO - - Processed 2 new MARADMINs
+2025-05-31 08:25:54,051 - INFO - - Found 83 total matches
+2025-05-31 08:25:54,051 - INFO - Matches found:
+2025-05-31 08:25:54,051 - INFO -   - HEALY, JACOB (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - KELLY, NICHOLAS (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - KING, LAURA (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - LEWIS, BRYANT (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - MARTINEZ, CESAR (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - MCDONALD, TATE (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - RUIZ, JUAN (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - SANCHEZ, ANTONIO (confidence: 90%)
+2025-05-31 08:25:54,051 - INFO -   - SMITH, SAMUEL (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - STEPHENS, PHILIP (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - TANG, LINH (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - THOMPSON JR, MICHAEL (confidence: 93%)
+2025-05-31 08:25:54,051 - INFO -   - WARNER, ETHAN (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - WOODS, JENNINGS (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - VAZQUEZ, XANIVAN (confidence: 90%)
+2025-05-31 08:25:54,051 - INFO -   - MOORE, JOHNNY (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - SMITH, JOSEPH (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - POWERS, STEPHEN (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - POWELL, SEAN (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - COSTELLO, JARED (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - ACEVEDO, ELMER (confidence: 90%)
+2025-05-31 08:25:54,051 - INFO -   - RIVERA, DEREK (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - MITCHELL, CONNOR (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - RUIZ, ANTHONY (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - NGUYEN, THANHTAM (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - MAY, RAYMOND (confidence: 100%)
+2025-05-31 08:25:54,051 - INFO -   - WAGNER, PARKER (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - DAVIS, CHARLES (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - ALLEN, DARIAN (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - MARSHALL, MAXWELL (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - MANN, DELON (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - MORA, EDWARD (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - ADAMS, CHRIS (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - WITT, CORY (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - MEYER, STEVEN (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - MEYER, KNUTE (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - ANDERSON, JACKSON (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - DONNELLY, JOE (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - PATTERSON, CONOR (confidence: 92%)
+2025-05-31 08:25:54,051 - INFO -   - CRUZ, ADAM (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - LYNCH, ROBERT (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - DIAZ, RUBEN (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - DUNBAR, KEVIN (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - CAMPBELL, DANIEL (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - WILCOX, RAYMOND (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - HANSEN, MATTHEW (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - MATTHEWS, JEREMY (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - CANTU, ZACKARIAH (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - QUINTERO, JIM (confidence: 91%)
+2025-05-31 08:25:54,051 - INFO -   - VILLAGOMEZ, JAY (confidence: 92%)
+2025-05-31 08:25:54,051 - INFO -   - KANE, KYLE (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - MEEHAN, MARTIN (confidence: 89%)
+2025-05-31 08:25:54,051 - INFO -   - SANCHEZ, REINALDO (confidence: 90%)
+2025-05-31 08:25:54,051 - INFO -   - ELLIS, AARON (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - WARD, MATTHEW (confidence: 86%)
+2025-05-31 08:25:54,051 - INFO -   - DAVIS, KYLE (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - EVANS, ROBERT (confidence: 88%)
+2025-05-31 08:25:54,051 - INFO -   - COAN, DAVID (confidence: 86%)
+2025-05-31 08:25:54,057 - INFO -   - GRIFFITH, DRAVEN (confidence: 91%)
+2025-05-31 08:25:54,057 - INFO -   - RICE, HUNTER (confidence: 86%)
+2025-05-31 08:25:54,057 - INFO -   - MARTINEZ, CESAR (confidence: 91%)
+2025-05-31 08:25:54,057 - INFO -   - MCDONALD, TATE (confidence: 91%)
+2025-05-31 08:25:54,057 - INFO -   - RUIZ, JUAN (confidence: 86%)
+2025-05-31 08:25:54,057 - INFO -   - SMITH, SAMUEL (confidence: 88%)
+2025-05-31 08:25:54,057 - INFO -   - UNGER, SHANNA (confidence: 86%)
+2025-05-31 08:25:54,057 - INFO -   - MOORE, JOHNNY (confidence: 88%)
+2025-05-31 08:25:54,057 - INFO -   - SMITH, JOSEPH (confidence: 88%)
+2025-05-31 08:25:54,057 - INFO -   - VINCENT, PATRICK (confidence: 90%)
+2025-05-31 08:25:54,057 - INFO -   - MITCHELL, CONNOR (confidence: 91%)
+2025-05-31 08:25:54,057 - INFO -   - RUIZ, ANTHONY (confidence: 86%)
+2025-05-31 08:25:54,057 - INFO -   - ALLEN, DARIAN (confidence: 88%)
+2025-05-31 08:25:54,057 - INFO -   - MANN, DELON (confidence: 86%)
+2025-05-31 08:25:54,057 - INFO -   - GREGORY, RAY (confidence: 90%)
+2025-05-31 08:25:54,057 - INFO -   - ADAMS, CHRIS (confidence: 86%)
+2025-05-31 08:25:54,059 - INFO -   - ANDERSON, JACKSON (confidence: 91%)
+2025-05-31 08:25:54,059 - INFO -   - PATTERSON, CONOR (confidence: 92%)
+2025-05-31 08:25:54,059 - INFO -   - LYNCH, ROBERT (confidence: 88%)
+2025-05-31 08:25:54,059 - INFO -   - DIAZ, RUBEN (confidence: 86%)
+2025-05-31 08:25:54,059 - INFO -   - CAMPBELL, DANIEL (confidence: 91%)
+2025-05-31 08:25:54,059 - INFO -   - MATTHEWS, JEREMY (confidence: 91%)
+2025-05-31 08:25:54,059 - INFO -   - WARD, MATTHEW (confidence: 86%)
+2025-05-31 08:25:54,059 - INFO -   - ODOM, JUSTIN (confidence: 86%)
+2025-05-31 08:25:54,059 - INFO -   - RICE, HUNTER (confidence: 86%)
+2025-05-31 08:25:54,411 - INFO - Chrome driver closed
