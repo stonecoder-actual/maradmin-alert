@@ -99,7 +99,7 @@ class MaradminProcessor:
     def load_mcc_lookup(self) -> Dict[str, str]:
         mcc_lookup = {}
         try:
-            with open('Maradmin-Alert\\MCC Codes.csv', 'r', encoding='utf-8') as file:
+            with open('MCC Codes.csv', 'r', encoding='utf-8') as file:
                 csv_reader = csv.reader(file)
                 for row in csv_reader:
                     if len(row) >= 4:
@@ -219,7 +219,7 @@ class MaradminProcessor:
         self.logger.info(f"Normalized MARADMIN title: {normalized_title}")
         # Determine if this is an enlisted promotion MARADMIN using regex matching
         enlisted_titles = CONFIG.get('enlisted_promotion_titles', [])
-        titles_of_interest = CONFIG.get('titles_of_interest', [])
+        officer_titles = CONFIG.get('officer_promotion_titles', [])
         enlisted_match = False
         for title in enlisted_titles:
             pattern = rf"\b{re.escape(title.strip().upper())}\b"
@@ -232,7 +232,7 @@ class MaradminProcessor:
             matches = self.search_enlisted_promotions(page_text, self.contacts)
         else:
             officer_match = False
-            for title in titles_of_interest:
+            for title in officer_promotion_titles:
                 pattern = rf"\b{re.escape(title.strip().upper())}\b"
                 self.logger.info(f"Checking regex pattern '{pattern}' against MARADMIN title")
                 if re.search(pattern, normalized_title):
@@ -275,7 +275,7 @@ class MaradminProcessor:
                 self.logger.info(f"- {entry.title}")
             new_entries = []
             for entry in feed.entries:
-                if any(title in entry.title.upper() for title in CONFIG['titles_of_interest']):
+                if any(title in entry.title.upper() for title in CONFIG['officer_promotion_titles']):
                     if entry.id not in self.processed_maradmins:
                         new_entries.append(entry)
             self.logger.info(f"Found {len(new_entries)} new promotion MARADMINs to process")
