@@ -9,6 +9,10 @@ import requests
 import zipfile
 import shutil
 import platform
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 class EnvironmentSetupGUI:
     def __init__(self, root):
@@ -48,6 +52,8 @@ class EnvironmentSetupGUI:
             "env_variables": False,
             "csv_files": False
         }
+        
+        self.webhook_entries = []  # Initialize webhook entries list
         
         self.create_sections(main_frame)
         
@@ -110,36 +116,116 @@ class EnvironmentSetupGUI:
         frame = ttk.LabelFrame(parent, text="3. Environment Variables (Slack Integration)", padding="10")
         frame.pack(fill="x", pady=10)
         
-        ttk.Label(frame, text="Configure Slack webhook URLs for notifications (optional but recommended):").pack(anchor="w", pady=5)
+        ttk.Label(frame, text="Manage Slack webhook URLs for notifications (optional but recommended):").pack(anchor="w", pady=5)
         
-        # Personal webhook
-        personal_frame = ttk.Frame(frame)
-        personal_frame.pack(fill="x", pady=2)
-        ttk.Label(personal_frame, text="Personal Slack Webhook:").pack(side="left")
-        self.personal_webhook_var = tk.StringVar(value=os.getenv('PERSONAL_SLACK_WEBHOOK_URL', ''))
-        ttk.Entry(personal_frame, textvariable=self.personal_webhook_var, width=50).pack(side="right", padx=5)
+        # Frame for webhook entries list
+        self.webhook_list_frame = ttk.Frame(frame)
+        self.webhook_list_frame.pack(fill="both", pady=5)
         
-        # Delta webhook
-        delta_frame = ttk.Frame(frame)
-        delta_frame.pack(fill="x", pady=2)
-        ttk.Label(delta_frame, text="Delta Group Webhook:").pack(side="left")
-        self.delta_webhook_var = tk.StringVar(value=os.getenv('DELTA_SLACK_WEBHOOK_URL', ''))
-        ttk.Entry(delta_frame, textvariable=self.delta_webhook_var, width=50).pack(side="right", padx=5)
+        # Scrollable canvas for webhook entries
+        self.webhook_canvas = tk.Canvas(self.webhook_list_frame, height=150)
+        self.webhook_scrollbar = ttk.Scrollbar(self.webhook_list_frame, orient="vertical", command=self.webhook_canvas.yview)
+        self.webhook_entries_frame = ttk.Frame(self.webhook_canvas)
         
-        # MFCC webhook
-        mfcc_frame = ttk.Frame(frame)
-        mfcc_frame.pack(fill="x", pady=2)
-        ttk.Label(mfcc_frame, text="MFCC Group Webhook:").pack(side="left")
-        self.mfcc_webhook_var = tk.StringVar(value=os.getenv('MFCC_SLACK_WEBHOOK_URL', ''))
-        ttk.Entry(mfcc_frame, textvariable=self.mfcc_webhook_var, width=50).pack(side="right", padx=5)
+        self.webhook_entries_frame.bind(
+            "<Configure>",
+            lambda e: self.webhook_canvas.configure(scrollregion=self.webhook_canvas.bbox("all"))
+        )
         
-        button_frame = ttk.Frame(frame)
-        button_frame.pack(fill="x", pady=10)
+        self.webhook_canvas.create_window((0, 0), window=self.webhook_entries_frame, anchor="nw")
+        self.webhook_canvas.configure(yscrollcommand=self.webhook_scrollbar.set)
         
-        self.env_status = ttk.Label(button_frame, text="")
+        self.webhook_canvas.pack(side="left", fill="both", expand=True)
+        self.webhook_scrollbar.pack(side="right", fill="y")
+        
+        # Buttons to add and clear webhooks
+        buttons_frame = ttk.Frame(frame)
+        buttons_frame.pack(fill="x", pady=10)
+        
+        ttk.Button(buttons_frame, text="Add Webhook", command=self.add_webhook_entry).pack(side="left")
+        ttk.Button(buttons_frame, text="Clear All Webhooks", command=self.clear_all_webhooks).pack(side="right")
+
+    def add_webhook_entry(self, name='', url=''):
+        frame = ttk.Frame(self.webhook_entries_frame, padding=5)
+        frame.pack(fill="x", pady=2)
+
+        name_var = tk.StringVar(value=name)
+        url_var = tk.StringVar(value=url)
+
+        ttk.Label(frame, text="Name:").pack(side="left")
+        name_entry = ttk.Entry(frame, textvariable=name_var, width=20)
+        name_entry.pack(side="left", padx=5)
+
+        ttk.Label(frame, text="Webhook URL:").pack(side="left")
+        url_entry = ttk.Entry(frame, textvariable=url_var, width=50)
+        url_entry.pack(side="left", padx=5)
+
+        def remove_entry():
+            frame.destroy()
+            self.webhook_entries.remove(entry)
+            self.update_final_button()
+
+        remove_button = ttk.Button(frame, text="Remove", command=remove_entry)
+        remove_button.pack(side="left", padx=5)
+
+        entry = {
+            'frame': frame,
+            'name_var': name_var,
+            'url_var': url_var,
+            'name_entry': name_entry,
+            'url_entry': url_entry,
+            'remove_button': remove_button
+        }
+        self.webhook_entries.append(entry)
+        self.update_final_button()
+
+    def clear_all_webhooks(self):
+        for entry in list(self.webhook_entries):
+            entry['frame'].destroy()
+            self.webhook_entries.remove(entry)
+        self.update_final_button()
+
+    def create_env_section(self, parent):
+        frame = ttk.LabelFrame(parent, text="3. Environment Variables (Slack Integration)", padding="10")
+        frame.pack(fill="x", pady=10)
+
+        ttk.Label(frame, text="Manage Slack webhook URLs for notifications (optional but recommended):").pack(anchor="w", pady=5)
+
+        # Frame for webhook entries list
+        self.webhook_list_frame = ttk.Frame(frame)
+        self.webhook_list_frame.pack(fill="both", pady=5)
+
+        # Scrollable canvas for webhook entries
+        self.webhook_canvas = tk.Canvas(self.webhook_list_frame, height=150)
+        self.webhook_scrollbar = ttk.Scrollbar(self.webhook_list_frame, orient="vertical", command=self.webhook_canvas.yview)
+        self.webhook_entries_frame = ttk.Frame(self.webhook_canvas)
+
+        self.webhook_entries_frame.bind(
+            "<Configure>",
+            lambda e: self.webhook_canvas.configure(scrollregion=self.webhook_canvas.bbox("all"))
+        )
+
+        self.webhook_canvas.create_window((0, 0), window=self.webhook_entries_frame, anchor="nw")
+        self.webhook_canvas.configure(yscrollcommand=self.webhook_scrollbar.set)
+
+        self.webhook_canvas.pack(side="left", fill="both", expand=True)
+        self.webhook_scrollbar.pack(side="right", fill="y")
+
+        # Buttons to add and clear webhooks
+        buttons_frame = ttk.Frame(frame)
+        buttons_frame.pack(fill="x", pady=10)
+
+        ttk.Button(buttons_frame, text="Add Webhook", command=self.add_webhook_entry).pack(side="left")
+        ttk.Button(buttons_frame, text="Clear All Webhooks", command=self.clear_all_webhooks).pack(side="right")
+
+        # Status label and save button
+        status_save_frame = ttk.Frame(frame)
+        status_save_frame.pack(fill="x", pady=5)
+
+        self.env_status = ttk.Label(status_save_frame, text="")
         self.env_status.pack(side="left")
-        
-        ttk.Button(button_frame, text="Save Environment Variables", command=self.save_env_variables).pack(side="right")
+
+        ttk.Button(status_save_frame, text="Save Environment Variables", command=self.save_env_variables).pack(side="right")
 
     def create_csv_section(self, parent):
         frame = ttk.LabelFrame(parent, text="4. CSV Files Setup", padding="10")
@@ -265,13 +351,18 @@ class EnvironmentSetupGUI:
                             key, value = line.strip().split('=', 1)
                             env_vars[key] = value
             
-            # Update with new values
-            if self.personal_webhook_var.get().strip():
-                env_vars['PERSONAL_SLACK_WEBHOOK_URL'] = self.personal_webhook_var.get().strip()
-            if self.delta_webhook_var.get().strip():
-                env_vars['DELTA_SLACK_WEBHOOK_URL'] = self.delta_webhook_var.get().strip()
-            if self.mfcc_webhook_var.get().strip():
-                env_vars['MFCC_SLACK_WEBHOOK_URL'] = self.mfcc_webhook_var.get().strip()
+            # Remove all existing webhook variables
+            keys_to_remove = [k for k in env_vars if k.endswith('_SLACK_WEBHOOK_URL')]
+            for k in keys_to_remove:
+                env_vars.pop(k)
+            
+            # Add current webhook entries
+            for entry in self.webhook_entries:
+                name = entry['name_var'].get().strip()
+                url = entry['url_var'].get().strip()
+                if name and url:
+                    key = f"{name.upper()}_SLACK_WEBHOOK_URL"
+                    env_vars[key] = url
             
             # Write back to .env file
             with open(env_file, 'w') as f:
@@ -379,9 +470,9 @@ class EnvironmentSetupGUI:
         self.check_csv_files()
         
         # Check env variables
-        if (os.getenv('PERSONAL_SLACK_WEBHOOK_URL') or 
-            os.getenv('DELTA_SLACK_WEBHOOK_URL') or 
-            os.getenv('MFCC_SLACK_WEBHOOK_URL')):
+        # Check if any environment variable ends with _SLACK_WEBHOOK_URL
+        env_vars = [k for k in os.environ if k.endswith('_SLACK_WEBHOOK_URL')]
+        if env_vars:
             self.env_status.config(text="Environment variables configured ✓", foreground="green")
             self.setup_steps["env_variables"] = True
         else:
