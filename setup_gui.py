@@ -112,12 +112,12 @@ class EnvironmentSetupGUI:
         
         ttk.Label(frame, text="Configure Slack webhook URLs for notifications (optional but recommended):").pack(anchor="w", pady=5)
         
-        # Main webhook
-        main_frame = ttk.Frame(frame)
-        main_frame.pack(fill="x", pady=2)
-        ttk.Label(main_frame, text="Main Slack Webhook:").pack(side="left")
-        self.main_webhook_var = tk.StringVar(value=os.getenv('MARADMIN_SLACK_WEBHOOK_URL', ''))
-        ttk.Entry(main_frame, textvariable=self.main_webhook_var, width=50).pack(side="right", padx=5)
+        # Personal webhook
+        personal_frame = ttk.Frame(frame)
+        personal_frame.pack(fill="x", pady=2)
+        ttk.Label(personal_frame, text="Personal Slack Webhook:").pack(side="left")
+        self.personal_webhook_var = tk.StringVar(value=os.getenv('PERSONAL_SLACK_WEBHOOK_URL', ''))
+        ttk.Entry(personal_frame, textvariable=self.personal_webhook_var, width=50).pack(side="right", padx=5)
         
         # Delta webhook
         delta_frame = ttk.Frame(frame)
@@ -266,8 +266,8 @@ class EnvironmentSetupGUI:
                             env_vars[key] = value
             
             # Update with new values
-            if self.main_webhook_var.get().strip():
-                env_vars['MARADMIN_SLACK_WEBHOOK_URL'] = self.main_webhook_var.get().strip()
+            if self.personal_webhook_var.get().strip():
+                env_vars['PERSONAL_SLACK_WEBHOOK_URL'] = self.personal_webhook_var.get().strip()
             if self.delta_webhook_var.get().strip():
                 env_vars['DELTA_SLACK_WEBHOOK_URL'] = self.delta_webhook_var.get().strip()
             if self.mfcc_webhook_var.get().strip():
@@ -379,7 +379,7 @@ class EnvironmentSetupGUI:
         self.check_csv_files()
         
         # Check env variables
-        if (os.getenv('MARADMIN_SLACK_WEBHOOK_URL') or 
+        if (os.getenv('PERSONAL_SLACK_WEBHOOK_URL') or 
             os.getenv('DELTA_SLACK_WEBHOOK_URL') or 
             os.getenv('MFCC_SLACK_WEBHOOK_URL')):
             self.env_status.config(text="Environment variables configured ✓", foreground="green")
