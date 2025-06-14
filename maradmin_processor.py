@@ -22,6 +22,7 @@ from slack_notifier import SlackNotifier
 class MaradminProcessor:
     def __init__(self):
         load_dotenv()
+        self.config = CONFIG  # Set config first since other methods depend on it
         self.setup_logging()
         self.contacts = []
         self.processed_maradmins = self.load_processed_maradmins()
@@ -76,10 +77,11 @@ class MaradminProcessor:
             except Exception as e:
                 self.logger.warning(f"Exception during Chrome driver cleanup: {str(e)}")
 
-    def load_contacts(self) -> List[Dict[str, str]]:
+    def load_contacts(self, custom_csv_path=None) -> List[Dict[str, str]]:
         contacts = []
         try:
-            with open(CONFIG['contacts_file'], 'r', encoding='utf-8') as file:
+            csv_path = custom_csv_path if custom_csv_path else self.config['contacts_file']
+            with open(csv_path, 'r', encoding='utf-8') as file:
                 csv_reader = csv.DictReader(file)
                 for row in csv_reader:
                     if row['first_name'].strip() and row['last_name'].strip():
@@ -116,14 +118,24 @@ class MaradminProcessor:
 
     def load_processed_maradmins(self) -> Dict:
         try:
-            if Path(CONFIG['archive_file']).exists():
-                with open(CONFIG['archive_file'], 'r') as file:
-                    data = json.load(file)
-                    self.logger.info(f"Loaded {len(data)} processed MARADMINs")
-                    return data
+            archive_path = Path(self.config['archive_file'])
+            if not archive_path.exists():
+                self.logger.info("No processed MARADMINs file found, creating new one")
+                with open(archive_path, 'w') as file:
+                    json.dump({}, file)
+                return {}
+            with open(archive_path, 'r') as file:
+                data = json.load(file)
+                self.logger.info(f"Loaded {len(data)} processed MARADMINs")
+                return data
+        except json.JSONDecodeError:
+            self.logger.warning("Invalid JSON in processed MARADMINs file, creating new one")
+            with open(archive_path, 'w') as file:
+                json.dump({}, file)
+            return {}
         except Exception as e:
             self.logger.error(f"Error loading processed MARADMINs: {str(e)}")
-        return {}
+            return {}
 
     def save_processed_maradmins(self):
         try:
