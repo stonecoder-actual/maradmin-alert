@@ -12,19 +12,38 @@ This project is an automated alert system for MARADMIN (Marine Administrative Me
 
 ## Setup Instructions
 
-### Prerequisites
+### Quick Setup (Recommended for First-Time Users)
+
+For first-time setup, use the automated setup wizard:
+
+```bash
+python setup.py
+```
+
+This will launch a GUI that will help you:
+- Install required Python packages
+- Verify Chrome browser installation
+- Configure Slack webhook URLs
+- Create template CSV files
+- Test your configuration
+
+### Manual Setup (Advanced Users)
+
+If you prefer manual setup or need to troubleshoot:
+
+#### Prerequisites
 
 - Python 3.8 or higher
 - Google Chrome browser installed
 - Slack workspace with incoming webhook URLs for notification channels
 
-### Installation
+#### Installation
 
 1. Clone the repository:
 
 ```bash
 git clone <repository-url>
-cd Maradmin-Alert
+cd maradmin-alert
 ```
 
 2. Create and activate a Python virtual environment (optional but recommended):
@@ -43,29 +62,87 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Create a `.env` file in the `Maradmin-Alert` directory with the following environment variables:
+4. Create a `.env` file in the project directory with the following environment variables:
 
 ```env
 MARADMIN_SLACK_WEBHOOK_URL=<your-main-slack-webhook-url>
 DELTA_SLACK_WEBHOOK_URL=<slack-webhook-url-for-delta-group>
 MFCC_SLACK_WEBHOOK_URL=<slack-webhook-url-for-mfcc-group>
-PERSONAL_SLACK_WEBHOOK_URL=<slack-webhook-url-for-personal-group>
 ```
 
 Replace the placeholder URLs with your actual Slack webhook URLs. For testing, you can point all to a test Slack channel.
 
-### Configuration
+#### Configuration Files
 
 - `config.py` contains configuration constants such as RSS feed URL, file paths, titles of interest, and timeouts.
-- `contacts.csv` should contain your contact list with columns: `first_name`, `last_name`, and optionally `group`.
+- `contacts.csv` should contain your contact list with columns: `first_name`, `last_name`, `group`, and optionally `mos`.
 - `MCC Codes.csv` contains MCC codes and corresponding command names for lookup.
+
+Example `contacts.csv` format:
+```csv
+first_name,last_name,group,mos
+John,Doe,Personal,0311
+Jane,Smith,Delta,0651
+Bob,Johnson,MFCC,0231
+```
 
 ### Running the Alert System
 
-Run the main script:
+You can run the system in several ways:
 
+1. GUI Mode (Recommended for manual searches):
+```bash
+python run_gui.py
+```
+This will launch the graphical interface where you can:
+- Search for specific promotions
+- Clear processed MARADMINs
+- Access the setup wizard if needed
+
+2. Command Line Mode (Good for manual or scheduled runs):
 ```bash
 python main.py
+```
+
+3. Automated Scheduling:
+
+#### Windows Task Scheduler
+1. Open Task Scheduler (Win + R, type "taskschd.msc")
+2. Click "Create Basic Task"
+3. Name it "MARADMIN Alert" and click Next
+4. Choose your trigger (Daily/Weekly/etc) and click Next
+5. Set the start time and frequency
+6. Select "Start a Program"
+7. In "Program/script" enter:
+   ```
+   "C:\Path\To\Python\python.exe"
+   ```
+8. In "Add arguments" enter:
+   ```
+   main.py
+   ```
+9. In "Start in" enter:
+   ```
+   C:\Path\To\Your\maradmin-alert
+   ```
+10. Click Finish
+
+#### Linux Cron Job
+1. Open your crontab:
+```bash
+crontab -e
+```
+
+2. Add one of these lines depending on your desired schedule:
+```bash
+# Run every hour
+0 * * * * cd /path/to/maradmin-alert && /usr/bin/python3 main.py
+
+# Run daily at 8 AM
+0 8 * * * cd /path/to/maradmin-alert && /usr/bin/python3 main.py
+
+# Run every Monday at 9 AM
+0 9 * * 1 cd /path/to/maradmin-alert && /usr/bin/python3 main.py
 ```
 
 The system will:

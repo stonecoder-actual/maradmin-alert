@@ -1,0 +1,5 @@
+2025-06-14 09:13:32,535 - INFO - Loaded 0 processed MARADMINs
+2025-06-14 09:13:32,539 - INFO - Loaded 3314 MCC codes from MCC.csv
+2025-06-14 09:14:02,095 - INFO - patching driver executable C:\Users\samst\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2025-06-14 09:14:03,174 - INFO - Chrome driver initialized successfully
+2025-06-14 09:14:03,506 - INFO - Chrome driver closed
