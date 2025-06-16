@@ -90,7 +90,20 @@ Bob,Johnson,MFCC,0231
 
 You can run the system in several ways:
 
-1. GUI Mode (Recommended for manual searches):
+1. Using the Automated Run Scripts (Recommended for scheduled tasks):
+
+The project includes two automated run scripts that handle virtual environment setup and dependency management:
+
+- For Windows: `run.bat`
+- For Linux: `run.sh`
+
+These scripts will:
+- Create a Python virtual environment if it doesn't exist
+- Install/update required dependencies
+- Run the main script with proper error handling
+- Provide detailed logging with timestamps
+
+2. GUI Mode (Recommended for manual searches):
 ```bash
 python run_gui.py
 ```
@@ -99,12 +112,12 @@ This will launch the graphical interface where you can:
 - Clear processed MARADMINs
 - Access the setup wizard if needed
 
-2. Command Line Mode (Good for manual or scheduled runs):
+3. Command Line Mode (Alternative for manual runs):
 ```bash
 python main.py
 ```
 
-3. Automated Scheduling:
+### Automated Scheduling
 
 #### Windows Task Scheduler
 1. Open Task Scheduler (Win + R, type "taskschd.msc")
@@ -113,37 +126,41 @@ python main.py
 4. Choose your trigger (Daily/Weekly/etc) and click Next
 5. Set the start time and frequency
 6. Select "Start a Program"
-7. In "Program/script" enter:
+7. In "Program/script" enter the full path to run.bat:
    ```
-   "C:\Path\To\Python\python.exe"
+   C:\Path\To\Your\maradmin-alert\run.bat
    ```
-8. In "Add arguments" enter:
-   ```
-   main.py
-   ```
-9. In "Start in" enter:
+8. In "Start in" enter:
    ```
    C:\Path\To\Your\maradmin-alert
    ```
-10. Click Finish
+9. Click Next, then Finish
+10. Optional: Right-click the task and select Properties to set additional options like "Run with highest privileges"
 
 #### Linux Cron Job
-1. Open your crontab:
+1. Make the run script executable:
+```bash
+chmod +x run.sh
+```
+
+2. Open your crontab:
 ```bash
 crontab -e
 ```
 
-2. Add one of these lines depending on your desired schedule:
+3. Add one of these lines depending on your desired schedule:
 ```bash
 # Run every hour
-0 * * * * cd /path/to/maradmin-alert && /usr/bin/python3 main.py
+0 * * * * /path/to/maradmin-alert/run.sh >> /path/to/maradmin-alert/logs/cron.log 2>&1
 
 # Run daily at 8 AM
-0 8 * * * cd /path/to/maradmin-alert && /usr/bin/python3 main.py
+0 8 * * * /path/to/maradmin-alert/run.sh >> /path/to/maradmin-alert/logs/cron.log 2>&1
 
 # Run every Monday at 9 AM
-0 9 * * 1 cd /path/to/maradmin-alert && /usr/bin/python3 main.py
+0 9 * * 1 /path/to/maradmin-alert/run.sh >> /path/to/maradmin-alert/logs/cron.log 2>&1
 ```
+
+Note: The run scripts include timestamp logging and error handling, making it easier to troubleshoot scheduled runs. Check the logs directory for detailed execution logs.
 
 The system will:
 
