@@ -41,7 +41,7 @@ class MaradminProcessor:
     def setup_logging(self):
         log_dir = Path(CONFIG['log_dir'])
         log_dir.mkdir(exist_ok=True)
-        log_filename = log_dir / f"maralert_v2_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+        log_filename = log_dir / f"maradmin-alert{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s',

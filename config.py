@@ -1,5 +1,5 @@
 CONFIG = {
-    'rss_url': 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=10&category=14336',
+    'rss_url': 'https://www.marines.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=6&Site=481&max=500&category=14336',
     'contacts_file': 'contacts.csv',
     'archive_file': 'processed_maradmins.json',
     'log_dir': 'logs',

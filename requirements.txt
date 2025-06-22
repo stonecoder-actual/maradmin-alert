@@ -3,3 +3,4 @@ feedparser
 python-dotenv
 undetected-chromedriver
 selenium
+setuptools
