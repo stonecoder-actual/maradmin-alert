@@ -1,1 +1,311 @@
-{}
+{
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4224549/1stlt-promotions-for-july-2025/": {
+    "title": "1STLT PROMOTIONS FOR JULY 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4224549/1stlt-promotions-for-july-2025/",
+    "processed_date": "2025-06-25T07:19:06.969835",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4224474/officer-promotions-for-july-2025-and-projected-officer-promotions-for-august-20/": {
+    "title": "OFFICER PROMOTIONS FOR JULY 2025 AND PROJECTED OFFICER PROMOTIONS FOR AUGUST 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4224474/officer-promotions-for-july-2025-and-projected-officer-promotions-for-august-20/",
+    "processed_date": "2025-06-25T07:19:09.202674",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4195763/officer-promotions-for-june-2025-and-projected-officer-promotions-for-july-2025/": {
+    "title": "OFFICER PROMOTIONS FOR JUNE 2025 AND PROJECTED OFFICER PROMOTIONS FOR JULY 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4195763/officer-promotions-for-june-2025-and-projected-officer-promotions-for-july-2025/",
+    "processed_date": "2025-06-25T07:19:11.393077",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4184197/1stlt-promotions-for-june-2025/": {
+    "title": "1STLT PROMOTIONS FOR JUNE 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4184197/1stlt-promotions-for-june-2025/",
+    "processed_date": "2025-06-25T07:19:13.749855",
+    "matches_found": 1,
+    "match_details": [
+      {
+        "name": "YURECKO, MICHAEL",
+        "confidence": 100,
+        "matched_text": "MICHAEL A. YURECKO              09JUN25      K03"
+      }
+    ]
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4154110/1stlt-promotions-for-may-2025/": {
+    "title": "1STLT PROMOTIONS FOR MAY 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4154110/1stlt-promotions-for-may-2025/",
+    "processed_date": "2025-06-25T07:19:16.296582",
+    "matches_found": 22,
+    "match_details": [
+      {
+        "name": "ALLEN, DARIAN",
+        "confidence": 100,
+        "matched_text": "DARIAN M. ALLEN                 13MAY25      077"
+      },
+      {
+        "name": "CAFARELL, ANDREW",
+        "confidence": 100,
+        "matched_text": "ANDREW J. CAFARELL              19MAY25      193"
+      },
+      {
+        "name": "BIANCHI, JULIA",
+        "confidence": 100,
+        "matched_text": "JULIA J. BIANCHI                26MAY25      1QP"
+      },
+      {
+        "name": "BOULOY, JARED",
+        "confidence": 100,
+        "matched_text": "JARED A. BOULOY                 26MAY25      K71"
+      },
+      {
+        "name": "BOYERO, ROBERT",
+        "confidence": 100,
+        "matched_text": "ROBERT J. BOYERO                26MAY25      1JG"
+      },
+      {
+        "name": "HARE, ROBERT",
+        "confidence": 100,
+        "matched_text": "ROBERT L. HARE                  26MAY25      V17"
+      },
+      {
+        "name": "HEALY, JACOB",
+        "confidence": 100,
+        "matched_text": "JACOB R. HEALY                  26MAY25      V44"
+      },
+      {
+        "name": "KRIGERIS, MICHAEL",
+        "confidence": 100,
+        "matched_text": "MICHAEL D. KRIGERIS             26MAY25      V15"
+      },
+      {
+        "name": "LEE, ANDREW",
+        "confidence": 100,
+        "matched_text": "ANDREW W. LEE                   26MAY25      V35"
+      },
+      {
+        "name": "MCALLISTER, GARRETT",
+        "confidence": 100,
+        "matched_text": "GARRETT M. MCALLISTER           26MAY25      1Y1"
+      },
+      {
+        "name": "MCCALEB, SADIE",
+        "confidence": 100,
+        "matched_text": "SADIE A. MCCALEB                26MAY25      15L"
+      },
+      {
+        "name": "OTERO, AIDAN",
+        "confidence": 100,
+        "matched_text": "AIDAN J. OTERO                  26MAY25      1NR"
+      },
+      {
+        "name": "RUIZ, JUAN",
+        "confidence": 100,
+        "matched_text": "JUAN M. RUIZ                    26MAY25      K9R"
+      },
+      {
+        "name": "RUSNELL, RUSSELL",
+        "confidence": 100,
+        "matched_text": "RUSSELL J. RUSNELL              26MAY25      V22"
+      },
+      {
+        "name": "SALVADOR, MYRON",
+        "confidence": 100,
+        "matched_text": "MYRON F. SALVADOR               26MAY25      1RU"
+      },
+      {
+        "name": "SANCHEZ, ANTONIO",
+        "confidence": 100,
+        "matched_text": "ANTONIO F. SANCHEZ IV           26MAY25      JB5"
+      },
+      {
+        "name": "SAUNDERS, ROB",
+        "confidence": 100,
+        "matched_text": "ROB SAUNDERS                    26MAY25      1Y4"
+      },
+      {
+        "name": "SCHERR, CAMERON",
+        "confidence": 100,
+        "matched_text": "CAMERON R. SCHERR               26MAY25      K03"
+      },
+      {
+        "name": "TANG, LINH",
+        "confidence": 100,
+        "matched_text": "LINH N. TANG                    26MAY25      15G"
+      },
+      {
+        "name": "VILLALVALIJO, EDMUNDO",
+        "confidence": 100,
+        "matched_text": "EDMUNDO D. VILLALVALIJO         26MAY25      1GS"
+      },
+      {
+        "name": "WELCH, MEGAN",
+        "confidence": 100,
+        "matched_text": "MEGAN S. WELCH                  26MAY25      K03"
+      },
+      {
+        "name": "WIREBACH, VAN",
+        "confidence": 100,
+        "matched_text": "VAN M. WIREBACH                 26MAY25      175"
+      }
+    ]
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4153690/officer-promotions-for-may-2025-and-projected-officer-promotions-for-june-2025/": {
+    "title": "OFFICER PROMOTIONS FOR MAY 2025 AND PROJECTED OFFICER PROMOTIONS FOR JUNE 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4153690/officer-promotions-for-may-2025-and-projected-officer-promotions-for-june-2025/",
+    "processed_date": "2025-06-25T07:19:19.107135",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4133959/officer-promotions-for-april-2025-and-projected-officer-promotions-for-may-2025/": {
+    "title": "OFFICER PROMOTIONS FOR APRIL 2025 AND PROJECTED OFFICER PROMOTIONS FOR MAY 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4133959/officer-promotions-for-april-2025-and-projected-officer-promotions-for-may-2025/",
+    "processed_date": "2025-06-25T07:19:21.381666",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4123772/1stlt-promotions-for-april-2025/": {
+    "title": "1STLT PROMOTIONS FOR APRIL 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4123772/1stlt-promotions-for-april-2025/",
+    "processed_date": "2025-06-25T07:19:23.628117",
+    "matches_found": 2,
+    "match_details": [
+      {
+        "name": "KING, LAURA",
+        "confidence": 100,
+        "matched_text": "LAURA KING                      06APR25      K03"
+      },
+      {
+        "name": "LUEDEE, AJ",
+        "confidence": 100,
+        "matched_text": "AJ M. LUEDEE                    29APR25      1RA"
+      }
+    ]
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4084414/1stlt-promotions-for-march-2025/": {
+    "title": "1STLT PROMOTIONS FOR MARCH 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4084414/1stlt-promotions-for-march-2025/",
+    "processed_date": "2025-06-25T07:19:26.265750",
+    "matches_found": 3,
+    "match_details": [
+      {
+        "name": "MCDONALD, TATE",
+        "confidence": 100,
+        "matched_text": "TATE M. MCDONALD                25MAR25      1GT"
+      },
+      {
+        "name": "STEPHENS, PHILIP",
+        "confidence": 100,
+        "matched_text": "PHILIP P. STEPHENS              25MAR25      115"
+      },
+      {
+        "name": "TOLBERT, CHRISTIAN",
+        "confidence": 100,
+        "matched_text": "CHRISTIAN E. TOLBERT            25MAR25      1RA"
+      }
+    ]
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4078779/officer-promotions-for-march-2025-and-projected-officer-promotions-for-april-20/": {
+    "title": "OFFICER PROMOTIONS FOR MARCH 2025 AND PROJECTED OFFICER PROMOTIONS FOR APRIL 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4078779/officer-promotions-for-march-2025-and-projected-officer-promotions-for-april-20/",
+    "processed_date": "2025-06-25T07:19:29.122979",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4041980/1stlt-promotions-for-february-2025/": {
+    "title": "1STLT PROMOTIONS FOR FEBRUARY 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4041980/1stlt-promotions-for-february-2025/",
+    "processed_date": "2025-06-25T07:19:31.400582",
+    "matches_found": 2,
+    "match_details": [
+      {
+        "name": "RAJAN, RONALD",
+        "confidence": 100,
+        "matched_text": "RONALD P. RAJAN                 03FEB25      1JX"
+      },
+      {
+        "name": "KANE, KYLE",
+        "confidence": 100,
+        "matched_text": "KYLE C. KANE                    18FEB25      175"
+      }
+    ]
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4041928/officer-promotions-for-february-2025-and-projected-officer-promotions-for-march/": {
+    "title": "OFFICER PROMOTIONS FOR FEBRUARY 2025 AND PROJECTED OFFICER PROMOTIONS FOR MARCH 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4041928/officer-promotions-for-february-2025-and-projected-officer-promotions-for-march/",
+    "processed_date": "2025-06-25T07:19:34.030894",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4007419/1stlt-promotions-for-january-2025/": {
+    "title": "1STLT PROMOTIONS FOR JANUARY 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4007419/1stlt-promotions-for-january-2025/",
+    "processed_date": "2025-06-25T07:19:36.312452",
+    "matches_found": 1,
+    "match_details": [
+      {
+        "name": "BURLEW, AUSTIN",
+        "confidence": 100,
+        "matched_text": "AUSTIN W. BURLEW                15JAN25      135"
+      }
+    ]
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/4007386/officer-promotions-for-january-2025-and-projected-officer-promotions-for-februa/": {
+    "title": "OFFICER PROMOTIONS FOR JANUARY 2025 AND PROJECTED OFFICER PROMOTIONS FOR FEBRUARY 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/4007386/officer-promotions-for-january-2025-and-projected-officer-promotions-for-februa/",
+    "processed_date": "2025-06-25T07:19:38.745632",
+    "matches_found": 1,
+    "match_details": [
+      {
+        "name": "SKALA, JAMES",
+        "confidence": 100,
+        "matched_text": "JAMES T. SKALA                  CAPT         IRR4.  UNDER THE"
+      }
+    ]
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/3975920/officer-promotions-for-december-2024-and-projected-officer-promotions-for-janua/": {
+    "title": "OFFICER PROMOTIONS FOR DECEMBER 2024 AND PROJECTED OFFICER PROMOTIONS FOR JANUARY 2025",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/3975920/officer-promotions-for-december-2024-and-projected-officer-promotions-for-janua/",
+    "processed_date": "2025-06-25T07:19:41.427980",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/3972562/1stlt-promotions-for-december-2024/": {
+    "title": "1STLT PROMOTIONS FOR DECEMBER 2024",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/3972562/1stlt-promotions-for-december-2024/",
+    "processed_date": "2025-06-25T07:19:43.721685",
+    "matches_found": 3,
+    "match_details": [
+      {
+        "name": "MALONE, ZACHARY",
+        "confidence": 100,
+        "matched_text": "ZACHARY M. MALONE               17DEC24      193"
+      },
+      {
+        "name": "MOIRANGTHEM, JAY",
+        "confidence": 100,
+        "matched_text": "JAY J. MOIRANGTHEM              17DEC24      1NK"
+      },
+      {
+        "name": "STONESTREET, SAMUEL",
+        "confidence": 100,
+        "matched_text": "SAMUEL E. STONESTREET           17DEC24      1RA"
+      }
+    ]
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/3944452/officer-promotions-for-november-2024-and-projected-officer-promotions-for-decem/": {
+    "title": "OFFICER PROMOTIONS FOR NOVEMBER 2024 AND PROJECTED OFFICER PROMOTIONS FOR DECEMBER 2024",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/3944452/officer-promotions-for-november-2024-and-projected-officer-promotions-for-decem/",
+    "processed_date": "2025-06-25T07:19:46.339113",
+    "matches_found": 0,
+    "match_details": []
+  },
+  "https://www.marines.mil/News/Messages/Messages-Display/Article/3943905/1stlt-promotions-for-november-2024/": {
+    "title": "1STLT PROMOTIONS FOR NOVEMBER 2024",
+    "link": "https://www.marines.mil/News/Messages/Messages-Display/Article/3943905/1stlt-promotions-for-november-2024/",
+    "processed_date": "2025-06-25T07:19:48.541697",
+    "matches_found": 0,
+    "match_details": []
+  }
+}

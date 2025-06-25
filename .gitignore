@@ -1,4 +1,5 @@
-contacts.csv
+*.csv
 .env
 env_backup
-V1_backup.zip
+*.zip
+*.json

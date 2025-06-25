@@ -244,7 +244,7 @@ class MaradminProcessor:
             matches = self.search_enlisted_promotions(page_text, self.contacts)
         else:
             officer_match = False
-            for title in officer_promotion_titles:
+            for title in officer_titles:
                 pattern = rf"\b{re.escape(title.strip().upper())}\b"
                 self.logger.info(f"Checking regex pattern '{pattern}' against MARADMIN title")
                 if re.search(pattern, normalized_title):
