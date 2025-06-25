@@ -3,3 +3,6 @@
 env_backup
 *.zip
 *.json
+./logs/*
+./env/*
+_pycache_
