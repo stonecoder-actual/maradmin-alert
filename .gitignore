@@ -8,3 +8,5 @@ env_backup
 ./env/*
 ./_pycache_/*
 ./venv/*
+*.log
+*.pyc
