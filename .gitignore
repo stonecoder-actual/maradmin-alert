@@ -1,3 +1,4 @@
+!MCC Codes.csv
 *.csv
 .env
 env_backup
