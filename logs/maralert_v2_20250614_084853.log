@@ -1,4 +1,0 @@
-2025-06-14 08:48:53,883 - ERROR - Error loading MCC lookup: [Errno 2] No such file or directory: 'Maradmin-Alert\\MCC Codes.csv'
-2025-06-14 08:48:53,883 - INFO - Starting MARADMIN Alert System v2.0
-2025-06-14 08:48:53,883 - ERROR - Error loading contacts: [Errno 2] No such file or directory: 'Maradmin-Alert\\contacts.csv'
-2025-06-14 08:48:53,883 - ERROR - No contacts loaded, exiting
