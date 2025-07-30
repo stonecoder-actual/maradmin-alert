@@ -57,7 +57,7 @@ class MaradminProcessor:
             options = uc.ChromeOptions()
             options.headless = True
             options.add_argument('--window-size=1920,1080')
-            options.binary_location = /usr/bin/chromium
+            options.binary_location = "/usr/bin/chromium"
             self.driver = uc.Chrome(options=options)
             self.logger.info("Chrome driver initialized successfully")
         except Exception as e:
